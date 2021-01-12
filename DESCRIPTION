@@ -7,7 +7,7 @@ Maintainer: Kato Akiru <paithiov909@gmail.com>
 Description: Download Livedoor News Corpus and parse to data.frame.
 License: MIT + file LICENSE
 URL: https://github.com/paithiov909/ldccr
-BugReports: https://github.com/paithiov909/ldccr 
+BugReports: https://github.com/paithiov909/ldccr/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
