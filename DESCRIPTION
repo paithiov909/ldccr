@@ -1,10 +1,10 @@
 Package: ldccr
-Title: Livedoor News Corpus Parser for R
-Version: 0.0.1
+Title: Corpus Parser for Japanese
+Version: 0.0.2
 Authors@R: c(
     person("Kato", "Akiru", email = "paithiov909@gmail.com", role = c("aut", "cre")))
 Maintainer: Kato Akiru <paithiov909@gmail.com>
-Description: Download Livedoor News Corpus and parse to data.frame.
+Description: Download Livedoor News Corpus, parse to data.frame and more.
 License: MIT + file LICENSE
 URL: https://github.com/paithiov909/ldccr
 BugReports: https://github.com/paithiov909/ldccr/issues
@@ -12,7 +12,13 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
 Imports: 
     utils,
     purrr,
-    readr
+    readr,
+    stringr
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
