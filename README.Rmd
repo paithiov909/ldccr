@@ -9,6 +9,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+require(magrittr)
+require(ldccr)
 ```
 
 # ldccr
@@ -16,34 +19,48 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-> Livedoor News Corpus Parser for R
+> Japanese Corpus Parser for R
 
-## Usage
+
+## Installation
 
 ``` r
 remotes::install_github("paithiov909/ldccr")
-corpus <- ldccr::parse_ldcc()
 ```
 
-## About Livedoor News Corpus
 
-See [livedoor ニュースコーパス](https://www.rondhuit.com/download.html#ldcc).
+## Usage
 
-> 概要
-> 
-> 本コーパスは、NHN Japan株式会社が運営する「livedoor ニュース」のうち、下記のクリエイティブ・コモンズライセンスが適用されるニュース記事を収集し、可能な限りHTMLタグを取り除いて作成したものです。
-> 
-> （中略）
-> 
-> 収集時期：2012年9月上旬 ダウンロード（通常テキスト）：ldcc-20140209.tar.gz ダウンロード（Apache Solr向き）：livedoor-news-data.tar.gz 論文などで引用する場合は、このURLを参照してください。
-> 
-> ライセンス
-> 
-> 各記事ファイルにはクリエイティブ・コモンズライセンス「表示 – 改変禁止」が適用されます。
-> クレジット表示についてはニュースカテゴリにより異なるため、ダウンロードしたファイルを展開したサブディレクトリにあるそれぞれの LICENSE.txt をご覧ください。 livedoor はNHN Japan株式会社の登録商標です。
+
+### Download and parse the Livedoor News Corpus
+
+```{r ldcc_example}
+corpus <- ldccr::parse_ldcc()
+
+dplyr::glimpse(corpus)
+```
+
+See also [livedoor ニュースコーパス](https://www.rondhuit.com/download.html#ldcc) for more details of the Livedoor News Corpus.
+
+
+### Download text file from Aozora Bunko
+
+```{r aozora_example}
+data("AozoraBunkoSnapshot")
+
+if (!dir.exists("tools")) dir.create("tools")
+
+text <- AozoraBunkoSnapshot %>%
+  dplyr::sample_n(1L) %>%
+  dplyr::pull("テキストファイルURL") %>%
+  ldccr::aozora(directory = "tools") %>%
+  readr::read_lines()
+
+dplyr::glimpse(text)
+```
+
 
 ## License
 
-Under the MIT license.
-
+MIT license.
 

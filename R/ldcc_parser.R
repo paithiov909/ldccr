@@ -45,7 +45,7 @@ parse_ldcc <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.ta
   }
   ## Read texts
   texts <- purrr::map_dfr(keep, function(dir) {
-    files <- list.files(file.path(exdir, "text", dir), full.name = TRUE, recursive = FALSE)
+    files <- list.files(file.path(exdir, "text", dir), full.names = TRUE, recursive = FALSE)
 
     message("Parsing ", dir, "...")
     purrr::map_dfr(files, function(file) {

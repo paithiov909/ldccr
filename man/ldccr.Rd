@@ -4,9 +4,9 @@
 \name{ldccr}
 \alias{ldccr}
 \alias{ldccr-package}
-\title{Livedoor News Corpus Parser for R}
+\title{Japanese Corpus Parser for R}
 \description{
-Download Livedoor News Corpus and parse to data.frame.
+Download Livedoor News Corpus, parse to data.frame and more.
 }
 \seealso{
 Useful links:

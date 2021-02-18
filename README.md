@@ -4,38 +4,64 @@
 # ldccr
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
-> Livedoor News Corpus Parser for R
+> Japanese Corpus Parser for R
 
-## Usage
+## Installation
 
 ``` r
 remotes::install_github("paithiov909/ldccr")
-corpus <- ldccr::parse_ldcc()
 ```
 
-## About Livedoor News Corpus
+## Usage
 
-See [livedoor ニュースコーパス](https://www.rondhuit.com/download.html#ldcc).
+### Download and parse the Livedoor News Corpus
 
-> 概要
-> 
-> 本コーパスは、NHN Japan株式会社が運営する「livedoor
-> ニュース」のうち、下記のクリエイティブ・コモンズライセンスが適用されるニュース記事を収集し、可能な限りHTMLタグを取り除いて作成したものです。
-> 
-> （中略）
-> 
-> 収集時期：2012年9月上旬 ダウンロード（通常テキスト）：ldcc-20140209.tar.gz ダウンロード（Apache
-> Solr向き）：livedoor-news-data.tar.gz 論文などで引用する場合は、このURLを参照してください。
-> 
-> ライセンス
-> 
-> 各記事ファイルにはクリエイティブ・コモンズライセンス「表示 – 改変禁止」が適用されます。
-> クレジット表示についてはニュースカテゴリにより異なるため、ダウンロードしたファイルを展開したサブディレクトリにあるそれぞれの
-> LICENSE.txt をご覧ください。 livedoor はNHN Japan株式会社の登録商標です。
+``` r
+corpus <- ldccr::parse_ldcc()
+#> Parsing dokujo-tsushin...
+#> Parsing it-life-hack...
+#> Parsing kaden-channel...
+#> Parsing livedoor-homme...
+#> Parsing movie-enter...
+#> Parsing peachy...
+#> Parsing smax...
+#> Parsing sports-watch...
+#> Parsing topic-news...
+#> Done.
+
+dplyr::glimpse(corpus)
+#> Rows: 7,367
+#> Columns: 5
+#> $ category   <chr> "dokujo-tsushin", "dokujo-tsushin", "dokujo-tsushin", "d...
+#> $ file_path  <chr> "C:\\Users\\user\\AppData\\Local\\Temp\\Rtmpikw7wR/text/...
+#> $ source     <chr> "http://news.livedoor.com/article/detail/4778030/", "htt...
+#> $ time_stamp <chr> "2010-05-22T14:30:00+0900", "2010-05-21T14:30:00+0900", ...
+#> $ body       <chr> "友人代表のスピーチ、独女はどうこなしている？\n\n　もうすぐジューン・ブライドと呼ばれる６月。独女の中には自...
+```
+
+See also [livedoor
+ニュースコーパス](https://www.rondhuit.com/download.html#ldcc) for more
+details of the Livedoor News Corpus.
+
+### Download text file from Aozora Bunko
+
+``` r
+data("AozoraBunkoSnapshot")
+
+if (!dir.exists("tools")) dir.create("tools")
+
+text <- AozoraBunkoSnapshot %>%
+  dplyr::sample_n(1L) %>%
+  dplyr::pull("テキストファイルURL") %>%
+  ldccr::aozora(directory = "tools") %>%
+  readr::read_lines()
+
+dplyr::glimpse(text)
+#>  chr [1:12] "午前一時に" "ボードレール" "富永太郎訳" "" "" ...
+```
 
 ## License
 
-Under the MIT license.
+MIT license.

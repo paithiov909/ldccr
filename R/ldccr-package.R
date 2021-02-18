@@ -1,4 +1,4 @@
-#' Livedoor News Corpus Parser for R
+#' Japanese Corpus Parser for R
 #' @docType package
 #' @name ldccr
 #' @keywords internal
