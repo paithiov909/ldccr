@@ -5,6 +5,12 @@
 #'
 "AozoraBunkoSnapshot"
 
+#' Tiny 'quanteda' corpus of Japanese blog posts
+#'
+#' @source \url{https://github.com/paithiov909/documents/tree/master/articles}
+#'
+"BlogPosts"
+
 #' List of Shinji-Shinkana works written by Miyazawa Kenji on Aozora Bunko
 #'
 "MiyazawaKenji"

@@ -21,16 +21,13 @@ require(ldccr)
 
 > Japanese Corpus Parser for R
 
-
 ## Installation
 
 ``` r
 remotes::install_github("paithiov909/ldccr")
 ```
 
-
 ## Usage
-
 
 ### Download and parse the Livedoor News Corpus
 
@@ -41,7 +38,6 @@ dplyr::glimpse(corpus)
 ```
 
 See also [livedoor ニュースコーパス](https://www.rondhuit.com/download.html#ldcc) for more details of the Livedoor News Corpus.
-
 
 ### Download text file from Aozora Bunko
 
@@ -58,7 +54,6 @@ text <- AozoraBunkoSnapshot %>%
 
 dplyr::glimpse(text)
 ```
-
 
 ## License
 

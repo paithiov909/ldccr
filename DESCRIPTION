@@ -1,10 +1,10 @@
 Package: ldccr
 Title: Japanese Corpus Parser for R
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(
-    person("Kato", "Akiru", email = "paithiov909@gmail.com", role = c("aut", "cre")))
+    person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("aut", "cre")))
 Maintainer: Kato Akiru <paithiov909@gmail.com>
-Description: Download Livedoor News Corpus, parse to data.frame and more.
+Description: Download the Livedoor News Corpus, parse it to data.frame and more.
 License: MIT + file LICENSE
 URL: https://github.com/paithiov909/ldccr
 BugReports: https://github.com/paithiov909/ldccr/issues

@@ -24,7 +24,7 @@ parse_ldcc(
 data.frame
 }
 \description{
-Download Livedoor News Corpus and parse to data.frame.
+Download Livedoor News Corpus and parse it to data.frame.
 }
 \seealso{
 \url{https://www.rondhuit.com/download.html#ldcc}

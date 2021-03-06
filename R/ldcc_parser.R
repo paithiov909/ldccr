@@ -1,5 +1,4 @@
 #' List of Categories
-#'
 #' @export
 ldcc_categories <- list(
   "dokujo-tsushin",
@@ -15,7 +14,7 @@ ldcc_categories <- list(
 
 #' Livedoor News Corpus Parser
 #'
-#' Download Livedoor News Corpus and parse to data.frame.
+#' Download Livedoor News Corpus and parse it to data.frame.
 #'
 #' @seealso \url{https://www.rondhuit.com/download.html#ldcc}
 #'
