@@ -33,7 +33,7 @@ parse_ldcc <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.ta
                        keep = ldcc_categories,
                        collapse = "\n\n") {
   ## Download file
-  if (!file.exists(file.path(exdir, "ldcc-20140209.tar.gz"))) {
+  if (!dir.exists(file.path(exdir, "text"))) {
     tmp <- tempfile(pattern = ".tar.gz", tmpdir = file.path(exdir))
     utils::download.file(url, tmp)
     utils::untar(tmp, exdir = file.path(exdir))
@@ -41,6 +41,7 @@ parse_ldcc <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.ta
     sapply(paste(text_dirs, "LICENSE.txt", sep = "/"), function(license) {
       try(unlink(file.path(license))) ## Delete LICENSE file
     })
+    unlink(tmp)
   }
   ## Read texts
   texts <- purrr::map_dfr(keep, function(dir) {
