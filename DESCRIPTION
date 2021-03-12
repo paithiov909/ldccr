@@ -1,6 +1,6 @@
 Package: ldccr
 Title: Japanese Corpus Parser for R
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: c(
     person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("aut", "cre")))
 Maintainer: Kato Akiru <paithiov909@gmail.com>
@@ -15,9 +15,11 @@ RoxygenNote: 7.1.1
 Depends: R (>= 2.10)
 Imports: 
     utils,
+    memoise,
     purrr,
     readr,
-    stringr
+    stringr,
+    vroom
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

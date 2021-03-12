@@ -24,4 +24,3 @@
 #' @source \url{https://www.aozora.gr.jp/cards/000148/files/789_ruby_5639.zip}
 #'
 "NekoText"
-

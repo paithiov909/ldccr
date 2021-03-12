@@ -7,7 +7,7 @@
 parse_ldcc(
   url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
   exdir = tempdir(),
-  keep = ldcc_categories,
+  keep = ldcc_categories(),
   collapse = "\\n\\n"
 )
 }
@@ -25,6 +25,7 @@ data.frame
 }
 \description{
 Download Livedoor News Corpus and parse it to data.frame.
+The result of this function is memoised with \code{memoise::memoise} internally.
 }
 \seealso{
 \url{https://www.rondhuit.com/download.html#ldcc}
