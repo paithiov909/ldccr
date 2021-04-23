@@ -34,11 +34,11 @@ corpus <- ldccr::parse_ldcc()
 dplyr::glimpse(corpus)
 #> Rows: 7,367
 #> Columns: 5
-#> $ category   <chr> "dokujo-tsushin", "dokujo-tsushin", "dokujo-tsushin", "d...
-#> $ file_path  <chr> "C:\\Users\\user\\AppData\\Local\\Temp\\Rtmpikw7wR/text/...
-#> $ source     <chr> "http://news.livedoor.com/article/detail/4778030/", "htt...
-#> $ time_stamp <chr> "2010-05-22T14:30:00+0900", "2010-05-21T14:30:00+0900", ...
-#> $ body       <chr> "友人代表のスピーチ、独女はどうこなしている？\n\n　もうすぐジューン・ブライドと呼ばれる６月。独女の中には自...
+#> $ category   <chr> "dokujo-tsushin", "dokujo-tsushin", "dokujo-tsushin", "doku~
+#> $ file_path  <chr> "C:\\Users\\user\\AppData\\Local\\Temp\\RtmpaKmgAY/text/dok~
+#> $ source     <chr> "http://news.livedoor.com/article/detail/4778030/", "http:/~
+#> $ time_stamp <chr> "2010-05-22T14:30:00+0900", "2010-05-21T14:30:00+0900", "20~
+#> $ body       <chr> "友人代表のスピーチ、独女はどうこなしている？\n\n　もうすぐ~
 ```
 
 See also [livedoor
@@ -50,16 +50,16 @@ details of the Livedoor News Corpus.
 ``` r
 data("AozoraBunkoSnapshot")
 
-if (!dir.exists("tools")) dir.create("tools")
+if (!dir.exists("cache")) dir.create("cache")
 
 text <- AozoraBunkoSnapshot %>%
   dplyr::sample_n(1L) %>%
   dplyr::pull("テキストファイルURL") %>%
-  ldccr::aozora(directory = "tools") %>%
+  ldccr::aozora(directory = "cache") %>%
   readr::read_lines()
 
 dplyr::glimpse(text)
-#>  chr [1:12] "午前一時に" "ボードレール" "富永太郎訳" "" "" ...
+#>  chr [1:107] "早耳三次捕物聞書" "浮世芝居女看板" "林不忘" "" "" ...
 ```
 
 ## License

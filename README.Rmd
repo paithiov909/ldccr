@@ -44,12 +44,12 @@ See also [livedoor ニュースコーパス](https://www.rondhuit.com/download.h
 ```{r aozora_example}
 data("AozoraBunkoSnapshot")
 
-if (!dir.exists("tools")) dir.create("tools")
+if (!dir.exists("cache")) dir.create("cache")
 
 text <- AozoraBunkoSnapshot %>%
   dplyr::sample_n(1L) %>%
   dplyr::pull("テキストファイルURL") %>%
-  ldccr::aozora(directory = "tools") %>%
+  ldccr::aozora(directory = "cache") %>%
   readr::read_lines()
 
 dplyr::glimpse(text)

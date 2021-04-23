@@ -75,6 +75,7 @@ parse_ldcc <- (function() {
       unlink(tmp)
     }
     ## Read texts
+    on.exit(message("Done."))
     return(read_corpus(exdir, keep, collapse))
   }
 })()
