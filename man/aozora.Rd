@@ -21,6 +21,3 @@ The path to the new file.
 Download a file from specified URL, unzip the file
 and convert it to UTF8.
 }
-\seealso{
-\url{https://gist.github.com/ishida-m/7969049}
-}

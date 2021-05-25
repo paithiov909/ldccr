@@ -1,9 +1,4 @@
 #' @noRd
-#' @import stringr
-#' @importFrom readr write_lines
-#' @importFrom utils download.file
-#' @importFrom utils unzip
-#' @keywords internal
 aozora_reader <- function() {
   f <- function(url, txtname, directory) {
     stopifnot(
@@ -67,8 +62,6 @@ aozora_reader <- function() {
 #'
 #' Download a file from specified URL, unzip the file
 #' and convert it to UTF8.
-#'
-#' @seealso \url{https://gist.github.com/ishida-m/7969049}
 #'
 #' @param url URL of text download link.
 #' @param txtname New file name as which text is saved.

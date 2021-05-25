@@ -1,6 +1,6 @@
 Package: ldccr
 Title: Japanese Corpus Parser for R
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: c(
     person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("aut", "cre")))
 Maintainer: Kato Akiru <paithiov909@gmail.com>

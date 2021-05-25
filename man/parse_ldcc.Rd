@@ -18,15 +18,15 @@ parse_ldcc(
 
 \item{keep}{list. categories to parse and keep in data.frame.}
 
-\item{collapse}{string with which \code{paste()} collapses lines.}
+\item{collapse}{string with which \code{base::paste} collapses lines.}
 }
 \value{
 data.frame
 }
 \description{
-Download Livedoor News Corpus and parse it to data.frame.
+Download the Livedoor News Corpus and parse it to data.frame.
 The result of this function is memoised with \code{memoise::memoise} internally.
 }
 \seealso{
-\url{https://www.rondhuit.com/download.html#ldcc}
+For details about the Livedoor News Corpus, see \href{https://www.rondhuit.com/download.html#ldcc}{this page}.
 }

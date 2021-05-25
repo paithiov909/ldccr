@@ -1,6 +1,6 @@
 #' List of Categories
-#' @return list
-#' @export
+#'
+#' @keywords internal
 ldcc_categories <- function() {
   list(
     "dokujo-tsushin",
@@ -16,11 +16,9 @@ ldcc_categories <- function() {
 }
 
 #' Corpus Reader
-#' @noRd
+#'
 #' @return memoised function
-#' @import purrr
-#' @importFrom vroom vroom_lines
-#' @import memoise
+#'
 #' @keywords internal
 ldcc_reader <- function() {
   f <- function(exdir, keep, collapse) {
@@ -44,18 +42,18 @@ ldcc_reader <- function() {
 
 #' Livedoor News Corpus Parser
 #'
-#' Download Livedoor News Corpus and parse it to data.frame.
+#' Download the Livedoor News Corpus and parse it to data.frame.
 #' The result of this function is memoised with \code{memoise::memoise} internally.
 #'
-#' @seealso \url{https://www.rondhuit.com/download.html#ldcc}
+#' @seealso
+#' For details about the Livedoor News Corpus, see \href{https://www.rondhuit.com/download.html#ldcc}{this page}.
 #'
 #' @param url string.
 #' @param exdir string. path to save text files.
 #' @param keep list. categories to parse and keep in data.frame.
-#' @param collapse string with which \code{paste()} collapses lines.
+#' @param collapse string with which \code{base::paste} collapses lines.
 #' @return data.frame
 #'
-#' @import utils
 #' @export
 parse_ldcc <- (function() {
   read_corpus <- ldcc_reader()
