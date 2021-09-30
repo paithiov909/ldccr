@@ -6,16 +6,6 @@
 #'
 "AozoraBunkoSnapshot"
 
-#' Tiny 'quanteda' corpus of Japanese blog posts
-#'
-#' @source \url{https://github.com/paithiov909/documents/tree/master/articles}
-#'
-"BlogPosts"
-
-#' List of Shinji-Shinkana works written by Miyazawa Kenji available on Aozora Bunko
-#'
-"MiyazawaKenji"
-
 #' Whole text of ‘Wagahai Wa Neko Dearu’ written by Natsume Souseki from Aozora Bunko
 #'
 #' @source \url{https://www.aozora.gr.jp/cards/000148/files/789_ruby_5639.zip}

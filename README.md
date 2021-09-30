@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-> Japanese Corpus Parser for R
+> Various Japanese Corpus Parser
 
 ## Installation
 
@@ -14,52 +14,26 @@
 remotes::install_github("paithiov909/ldccr")
 ```
 
-## Usage
+## Supported Corpus
 
-### Download and parse the Livedoor News Corpus
+| …   | Name                                         | License                                                               | Link                                             |
+|-----|----------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------|
+| 1   | Live Door News Corpus                        | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/)  | [\#](http://www.rondhuit.com/download.html#ldcc) |
+| 2   | Japanese Realistic Textual Entailment Corpus | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus) |
 
-``` r
-corpus <- ldccr::parse_ldcc()
-#> Parsing dokujo-tsushin...
-#> Parsing it-life-hack...
-#> Parsing kaden-channel...
-#> Parsing livedoor-homme...
-#> Parsing movie-enter...
-#> Parsing peachy...
-#> Parsing smax...
-#> Parsing sports-watch...
-#> Parsing topic-news...
-#> Done.
-
-dplyr::glimpse(corpus)
-#> Rows: 7,367
-#> Columns: 5
-#> $ category   <chr> "dokujo-tsushin", "dokujo-tsushin", "dokujo-tsushin", "doku~
-#> $ file_path  <chr> "C:\\Users\\user\\AppData\\Local\\Temp\\RtmpaKmgAY/text/dok~
-#> $ source     <chr> "http://news.livedoor.com/article/detail/4778030/", "http:/~
-#> $ time_stamp <chr> "2010-05-22T14:30:00+0900", "2010-05-21T14:30:00+0900", "20~
-#> $ body       <chr> "友人代表のスピーチ、独女はどうこなしている？\n\n　もうすぐ~
-```
-
-See also [livedoor
-ニュースコーパス](https://www.rondhuit.com/download.html#ldcc) for more
-details of the Livedoor News Corpus.
-
-### Download text file from Aozora Bunko
+## Download text file from Aozora Bunko
 
 ``` r
-data("AozoraBunkoSnapshot")
-
 if (!dir.exists("cache")) dir.create("cache")
 
-text <- AozoraBunkoSnapshot %>%
+text <- ldccr::AozoraBunkoSnapshot %>%
   dplyr::sample_n(1L) %>%
   dplyr::pull("テキストファイルURL") %>%
-  ldccr::aozora(directory = "cache") %>%
+  ldccr::read_aozora(directory = "cache") %>%
   readr::read_lines()
 
 dplyr::glimpse(text)
-#>  chr [1:107] "早耳三次捕物聞書" "浮世芝居女看板" "林不忘" "" "" ...
+#>  chr [1:162] "世界怪談名作集" "信号手" "ディッケンズ Charles Dickens" ...
 ```
 
 ## License

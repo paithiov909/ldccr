@@ -9,8 +9,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-
-require(magrittr)
 require(ldccr)
 ```
 
@@ -19,7 +17,7 @@ require(ldccr)
 <!-- badges: start -->
 <!-- badges: end -->
 
-> Japanese Corpus Parser for R
+> Various Japanese Corpus Parser
 
 ## Installation
 
@@ -27,29 +25,24 @@ require(ldccr)
 remotes::install_github("paithiov909/ldccr")
 ```
 
-## Usage
+## Supported Corpus
 
-### Download and parse the Livedoor News Corpus
+| ... | Name | License | Link |
+| --- | ---- | ------- | ---- |
+| 1 | Live Door News Corpus | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/) | [#](http://www.rondhuit.com/download.html#ldcc) |
+| 2 | Japanese Realistic Textual Entailment Corpus | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [#](https://github.com/megagonlabs/jrte-corpus) |
 
-```{r ldcc_example}
-corpus <- ldccr::parse_ldcc()
 
-dplyr::glimpse(corpus)
-```
 
-See also [livedoor ニュースコーパス](https://www.rondhuit.com/download.html#ldcc) for more details of the Livedoor News Corpus.
-
-### Download text file from Aozora Bunko
+## Download text file from Aozora Bunko
 
 ```{r aozora_example}
-data("AozoraBunkoSnapshot")
-
 if (!dir.exists("cache")) dir.create("cache")
 
-text <- AozoraBunkoSnapshot %>%
+text <- ldccr::AozoraBunkoSnapshot %>%
   dplyr::sample_n(1L) %>%
   dplyr::pull("テキストファイルURL") %>%
-  ldccr::aozora(directory = "cache") %>%
+  ldccr::read_aozora(directory = "cache") %>%
   readr::read_lines()
 
 dplyr::glimpse(text)

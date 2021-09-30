@@ -12,12 +12,12 @@ first_name_male <-
   purrr::map_dfr(
     yaml$first_name$male,
     ~ data.frame(
-        type = "first",
-        gender = "male",
-        kanji = .[1],
-        hiragana = .[2],
-        katakana = .[3]
-      )
+      type = "first",
+      gender = "male",
+      kanji = .[1],
+      hiragana = .[2],
+      katakana = .[3]
+    )
   )
 
 first_name_female <-

@@ -1,15 +1,15 @@
 #' @noRd
-aozora_reader <- function() {
-  f <- function(url, txtname, directory) {
+read_aozora_impl <- function() {
+  function(url, txtname, directory) {
     stopifnot(
-      is.null(txtname) || is.character(txtname),
-      is.character(url),
-      !is.na(url) || url != ""
+      rlang::is_null(txtname) || rlang::is_character(txtname),
+      rlang::is_character(url),
+      !is.na(url) || !rlang::is_empty(url)
     )
 
     tmp <- tempfile(fileext = ".zip")
-    utils::download.file(url, tmp, quiet = TRUE)
-    text_file <- utils::unzip(tmp, exdir = tempdir())
+    download.file(url, tmp, quiet = TRUE)
+    text_file <- unzip(tmp, exdir = tempdir())
     unlink(tmp)
 
     if (length(text_file) > 1) {
@@ -19,7 +19,10 @@ aozora_reader <- function() {
     if (is.null(txtname)) {
       txtname <- stringr::str_split(basename(text_file), ".txt$", simplify = TRUE)[1]
     }
+
     connection <- file(text_file, open = "rt")
+    on.exit(close(connection))
+
     new_file <- file.path(directory, paste0(txtname, ".txt"))
 
     if (file.create(new_file)) {
@@ -34,6 +37,8 @@ aozora_reader <- function() {
 
       lines <- readLines(connection, n = -1L, encoding = "CP932")
       lines <- iconv(lines, from = "CP932", to = "UTF-8")
+      lines <- ldcc_conv_normalize(lines)
+
       for (line in lines) {
         if (stringr::str_detect(line, reg1)) break
         if (stringr::str_detect(line, reg2)) break
@@ -47,33 +52,34 @@ aozora_reader <- function() {
             stringr::str_replace_all(reg3, "") %>%
             stringr::str_replace_all(reg4, "") %>%
             stringr::str_replace_all(reg5, "")
-          readr::write_lines(line, outfile, append = TRUE)
+          write_lines(line, outfile, append = TRUE)
         }
       }
       close(outfile)
     }
-    close(connection)
     return(new_file)
   }
-  return(memoise::memoise(f))
 }
 
 #' Download text file from Aozora Bunko
 #'
-#' Download a file from specified URL, unzip the file
-#' and convert it to UTF8.
+#' Download a file from specified URL, unzip and convert it to UTF-8.
 #'
 #' @param url URL of text download link.
 #' @param txtname New file name as which text is saved.
 #' If `NULL` provided, keeps name of the source file.
 #' @param directory Path where new file is saved.
 #'
-#' @return The path to the new file.
+#' @return The path to the file downloaded.
 #'
 #' @export
-aozora <- (function() {
-  read_aozora <- aozora_reader()
-  function(url, txtname = NULL, directory = file.path(getwd(), "cache")) {
-    read_aozora(url, txtname, directory)
+read_aozora <- function(url = "https://www.aozora.gr.jp/cards/000081/files/472_ruby_654.zip",
+                        txtname = NULL,
+                        directory = file.path(getwd(), "cache")) {
+  res <- NULL
+  if (dir.exists(directory)) {
+    res <-
+      rlang::env_get(.pkgenv, "read_aozora", default = read_aozora_impl())(url, txtname, directory)
   }
-})()
+  return(res)
+}

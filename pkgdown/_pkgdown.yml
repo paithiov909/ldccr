@@ -1,0 +1,17 @@
+destination: docs
+
+url: https://paithiov909.github.io/ldccr
+
+reference:
+  - title: "Corpus Parser"
+    contents:
+      - read_ldnws
+      - read_jrte_rte
+      - read_aozora
+  - title: "Dataset"
+    contents:
+      - AozoraBunkoSnapshot
+      - GimeiAddresses
+      - GimeiNames
+      - NekoText
+
