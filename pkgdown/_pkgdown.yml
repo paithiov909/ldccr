@@ -2,6 +2,9 @@ destination: docs
 
 url: https://paithiov909.github.io/ldccr
 
+home:
+  strip_header: true
+
 reference:
   - title: "Corpus Parser"
     contents:

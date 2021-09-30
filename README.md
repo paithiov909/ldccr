@@ -6,20 +6,34 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-> Various Japanese Corpus Parser
+## Overview
 
-## Installation
+ldccr is utilities for various Japanese corpora.
 
-``` r
-remotes::install_github("paithiov909/ldccr")
-```
+The goal of ldccr package is to make easy to use Japanese language
+resources.
 
-## Supported Corpus
+This package provides:
 
-| …   | Name                                         | License                                                               | Link                                             |
-|-----|----------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------|
-| 1   | Live Door News Corpus                        | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/)  | [\#](http://www.rondhuit.com/download.html#ldcc) |
-| 2   | Japanese Realistic Textual Entailment Corpus | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus) |
+1.  parsers for several Japanese corpora that are free or open licensed
+    (non proprietary).
+2.  downloader of zipped text files published on [Aozora
+    Bunko](https://www.aozora.gr.jp/).
+
+## Supported Corpora
+
+### Monolingual
+
+| …                    | Name                                                          | License                                                               | Link                                                  |
+|----------------------|---------------------------------------------------------------|-----------------------------------------------------------------------|-------------------------------------------------------|
+| :heavy\_check\_mark: | Live Door News Corpus                                         | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/)  | [\#](http://www.rondhuit.com/download.html#ldcc)      |
+| :no\_entry:          | Japanese Realistic Textual Entailment Corpus                  | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus)      |
+| :x:                  | JEITA Public Morphologically Tagged Corpus (in ChaSen format) | Unknown                                                               | [\#](https://github.com/julianbetz/yokome-jpn-corpus) |
+| :x:                  | Kyoto University and NTT Blog Corpus (KNB Corpus)             | 3-clause BSD license                                                  | [\#](https://nlp.ist.i.kyoto-u.ac.jp/kuntt/)          |
+
+### Multilingual
+
+> Currently not supported.
 
 ## Download text file from Aozora Bunko
 
@@ -33,7 +47,7 @@ text <- ldccr::AozoraBunkoSnapshot %>%
   readr::read_lines()
 
 dplyr::glimpse(text)
-#>  chr [1:162] "世界怪談名作集" "信号手" "ディッケンズ Charles Dickens" ...
+#>  chr [1:46] "芸術が必要とする科学" "宮本百合子" "" "" "          一" "" ...
 ```
 
 ## License

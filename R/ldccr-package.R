@@ -1,4 +1,4 @@
-#' Various Japanese Corpus Parser
+#' Utilities for Various Japanese Corpora
 ## ----
 #' @importFrom memoise memoise
 #' @importFrom purrr map map_dfr walk set_names

@@ -4,9 +4,11 @@
 \name{ldccr-package}
 \alias{ldccr}
 \alias{ldccr-package}
-\title{Various Japanese Corpus Parser}
+\title{Utilities for Various Japanese Corpora}
 \description{
-Various Japanese corpus parser for R.
+The goal of ldccr package is to make easy to use Japanese language resources.
+    This package provides parsers for several Japanese corpora that are free or open licensed
+    and a downloader of zipped text files published on Aozora Bunko.
 }
 \seealso{
 Useful links:
