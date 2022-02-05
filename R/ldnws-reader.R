@@ -20,11 +20,11 @@ ldnws_categories <- function() {
 #' @noRd
 read_ldnws_impl <- function() {
   function(exdir, keep, collapse) {
-    res <- map_dfr(keep, function(dir) {
+    res <- purrr::map_dfr(keep, function(dir) {
       files <- list.files(file.path(exdir, "text", dir), full.names = TRUE, recursive = FALSE)
       message("Parsing ", dir, "...")
-      map_dfr(files, function(file) {
-        lines <- read_lines(file)
+      purrr::map_dfr(files, function(file) {
+        lines <- readr::read_lines(file)
         return(data.frame(
           category = dir,
           file_path = file,
@@ -34,8 +34,8 @@ read_ldnws_impl <- function() {
         ))
       })
     }) %>%
-      mutate(category = as.factor(category))
-    return(as_tibble(res))
+      dplyr::mutate(category = as.factor(category))
+    return(tibble::as_tibble(res))
   }
 }
 
@@ -69,7 +69,7 @@ read_ldnws <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.ta
     download.file(url, tmp)
     untar(tmp, exdir = file.path(exdir))
     text_dirs <- list.dirs(file.path(exdir, "data"), recursive = FALSE)
-    walk(paste(text_dirs, c("LICENSE.txt", "CHANGES.txt"), sep = "/"), function(file) {
+    purrr::walk(paste(text_dirs, c("LICENSE.txt", "CHANGES.txt"), sep = "/"), function(file) {
       try(unlink(file.path(file)))
     })
     unlink(tmp)

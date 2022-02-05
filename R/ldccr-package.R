@@ -1,10 +1,6 @@
 #' Utilities for Various Japanese Corpora
 ## ----
-#' @importFrom memoise memoise
-#' @importFrom purrr map map_dfr walk set_names
-#' @importFrom RcppSimdJson fparse
-#' @importFrom readr write_lines read_lines read_tsv
-#' @importFrom tibble as_tibble rowid_to_column
+#' @import dplyr
 #' @importFrom utils download.file untar unzip
 ## ----
 #' @docType package

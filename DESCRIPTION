@@ -3,7 +3,7 @@ Title: Utilities for Various Japanese Corpora
 Version: 0.0.6.900
 Authors@R: c(
     person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("aut", "cre")))
-Maintainer: Kato Akiru <paithiov909@gmail.com>
+Maintainer: Akiru Kato <paithiov909@gmail.com>
 Description: The goal of ldccr package is to make easy to use Japanese language resources.
     This package provides parsers for several Japanese corpora that are free or open licensed
     and a downloader of zipped text files published on Aozora Bunko.

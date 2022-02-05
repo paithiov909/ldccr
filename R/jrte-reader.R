@@ -32,12 +32,12 @@ jrte_rte_files <- function(keep = c(
 #' @noRd
 read_jrte_rte_impl <- function() {
   function(exdir, keep) {
-    res <- map(keep, function(tsv) {
+    res <- purrr::map(keep, function(tsv) {
       message("Parsing ", tsv, "...")
       tsv <- file.path(exdir, "data", tsv)
-      df <- read_tsv(tsv, col_names = FALSE, progress = FALSE)
+      df <- readr::read_tsv(tsv, col_names = FALSE, progress = FALSE)
       df %>%
-        transmute(
+        dplyr::transmute(
           example_id = X1,
           label = factor(X2, labels = c("entailment", "non-entailment")),
           hypothesis = X3,
@@ -46,11 +46,11 @@ read_jrte_rte_impl <- function() {
           reasoning = X6,
           usage = as.factor(X7)
         ) %>%
-        mutate(across(where(is.character), ~ na_if(., ""))) %>%
-        mutate(across(where(is.character), ~ na_if(., "null"))) %>%
-        rowid_to_column()
+        dplyr::mutate(across(where(is.character), ~ na_if(., ""))) %>%
+        dplyr::mutate(across(where(is.character), ~ na_if(., "null"))) %>%
+        tibble::rowid_to_column()
     })
-    return(set_names(res, keep))
+    return(purrr::set_names(res, keep))
   }
 }
 
