@@ -7,14 +7,3 @@ template:
 
 home:
   strip_header: true
-
-reference:
-  - title: "Corpus Parser"
-    contents:
-      - read_ldnws
-      - read_jrte_rte
-      - read_aozora
-  - title: "Dataset"
-    contents:
-      - AozoraBunkoSnapshot
-      - NekoText
