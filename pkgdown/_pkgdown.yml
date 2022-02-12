@@ -2,6 +2,9 @@ destination: docs
 
 url: https://paithiov909.github.io/ldccr
 
+template:
+  bootstrap: 5
+
 home:
   strip_header: true
 
@@ -14,7 +17,4 @@ reference:
   - title: "Dataset"
     contents:
       - AozoraBunkoSnapshot
-      - GimeiAddresses
-      - GimeiNames
       - NekoText
-
