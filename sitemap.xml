@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://paithiov909.github.io/ldccr/404.html</loc>
+  </url>
+  <url>
+    <loc>https://paithiov909.github.io/ldccr/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://paithiov909.github.io/ldccr/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://paithiov909.github.io/ldccr/authors.html</loc>
+  </url>
+  <url>
     <loc>https://paithiov909.github.io/ldccr/index.html</loc>
   </url>
   <url>
@@ -8,6 +20,9 @@
   </url>
   <url>
     <loc>https://paithiov909.github.io/ldccr/reference/NekoText.html</loc>
+  </url>
+  <url>
+    <loc>https://paithiov909.github.io/ldccr/reference/index.html</loc>
   </url>
   <url>
     <loc>https://paithiov909.github.io/ldccr/reference/jrte_rte_files.html</loc>
