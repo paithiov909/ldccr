@@ -2,6 +2,7 @@
 
 export("%>%")
 export(jrte_rte_files)
+export(ldnws_categories)
 export(parse_jrte_reasoning)
 export(read_aozora)
 export(read_jrte)

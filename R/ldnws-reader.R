@@ -1,19 +1,36 @@
 #' List of Categories
 #'
+#' @param keep Character vector. File names to parse.
 #' @return list
-#'
-#' @keywords internal
-ldnws_categories <- list(
-  "dokujo-tsushin",
-  "it-life-hack",
-  "kaden-channel",
-  "livedoor-homme",
-  "movie-enter",
-  "peachy",
-  "smax",
-  "sports-watch",
-  "topic-news"
-)
+#' @export
+ldnws_categories <- function(keep = c(
+                               "dokujo-tsushin",
+                               "it-life-hack",
+                               "kaden-channel",
+                               "livedoor-homme",
+                               "movie-enter",
+                               "peachy",
+                               "smax",
+                               "sports-watch",
+                               "topic-news"
+                             )) {
+  keep <- match.arg(
+    keep,
+    c(
+      "dokujo-tsushin",
+      "it-life-hack",
+      "kaden-channel",
+      "livedoor-homme",
+      "movie-enter",
+      "peachy",
+      "smax",
+      "sports-watch",
+      "topic-news"
+    ),
+    several.ok = TRUE
+  )
+  return(as.list(keep))
+}
 
 
 #' @noRd
@@ -57,7 +74,7 @@ read_ldnws_impl <- function() {
 #' @export
 read_ldnws <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
                        exdir = tempdir(),
-                       keep = ldnws_categories,
+                       keep = ldnws_categories(),
                        collapse = "\n\n") {
   on.exit(message("Done."))
 
