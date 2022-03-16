@@ -3,19 +3,18 @@
 #' @return list
 #'
 #' @keywords internal
-ldnws_categories <- function() {
-  list(
-    "dokujo-tsushin",
-    "it-life-hack",
-    "kaden-channel",
-    "livedoor-homme",
-    "movie-enter",
-    "peachy",
-    "smax",
-    "sports-watch",
-    "topic-news"
-  )
-}
+ldnws_categories <- list(
+  "dokujo-tsushin",
+  "it-life-hack",
+  "kaden-channel",
+  "livedoor-homme",
+  "movie-enter",
+  "peachy",
+  "smax",
+  "sports-watch",
+  "topic-news"
+)
+
 
 #' @noRd
 read_ldnws_impl <- function() {
@@ -34,7 +33,7 @@ read_ldnws_impl <- function() {
         ))
       })
     }) %>%
-      dplyr::mutate(category = as.factor(category))
+      dplyr::mutate(category = as.factor(.data$category))
     return(tibble::as_tibble(res))
   }
 }
@@ -58,7 +57,7 @@ read_ldnws_impl <- function() {
 #' @export
 read_ldnws <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
                        exdir = tempdir(),
-                       keep = ldnws_categories(),
+                       keep = ldnws_categories,
                        collapse = "\n\n") {
   on.exit(message("Done."))
 

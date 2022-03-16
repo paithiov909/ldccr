@@ -2,10 +2,12 @@
 
 export("%>%")
 export(jrte_rte_files)
+export(parse_jrte_reasoning)
 export(read_aozora)
-export(read_jrte_rte)
+export(read_jrte)
 export(read_ldnws)
 import(dplyr)
+import(rlang)
 importFrom(utils,download.file)
 importFrom(utils,untar)
 importFrom(utils,unzip)

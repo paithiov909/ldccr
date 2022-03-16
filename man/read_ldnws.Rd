@@ -7,7 +7,7 @@
 read_ldnws(
   url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
   exdir = tempdir(),
-  keep = ldnws_categories(),
+  keep = ldnws_categories,
   collapse = "\\n\\n"
 )
 }

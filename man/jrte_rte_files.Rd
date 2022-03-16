@@ -6,8 +6,7 @@
 \usage{
 jrte_rte_files(
   keep = c("rte.nlp2020_base", "rte.nlp2020_append", "rte.lrec2020_surf",
-    "rte.lrec2020_sem_short", "rte.lrec2020_sem_long", "rte.lrec2020_mlm",
-    "rte.lrec2020_me")
+    "rte.lrec2020_sem_short", "rte.lrec2020_sem_long", "rte.lrec2020_me")
 )
 }
 \arguments{

@@ -1,6 +1,7 @@
 #' Utilities for Various Japanese Corpora
 ## ----
 #' @import dplyr
+#' @import rlang
 #' @importFrom utils download.file untar unzip
 ## ----
 #' @docType package
