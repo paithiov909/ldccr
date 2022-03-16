@@ -34,13 +34,19 @@
     <loc>https://paithiov909.github.io/ldccr/reference/ldnws_categories.html</loc>
   </url>
   <url>
+    <loc>https://paithiov909.github.io/ldccr/reference/parse_jrte_judges.html</loc>
+  </url>
+  <url>
+    <loc>https://paithiov909.github.io/ldccr/reference/parse_jrte_reasoning.html</loc>
+  </url>
+  <url>
     <loc>https://paithiov909.github.io/ldccr/reference/pipe.html</loc>
   </url>
   <url>
     <loc>https://paithiov909.github.io/ldccr/reference/read_aozora.html</loc>
   </url>
   <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/read_jrte_rte.html</loc>
+    <loc>https://paithiov909.github.io/ldccr/reference/read_jrte.html</loc>
   </url>
   <url>
     <loc>https://paithiov909.github.io/ldccr/reference/read_ldnws.html</loc>
