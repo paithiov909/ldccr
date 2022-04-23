@@ -19,6 +19,12 @@
     <loc>https://paithiov909.github.io/ldccr/reference/AozoraBunkoSnapshot.html</loc>
   </url>
   <url>
+    <loc>https://paithiov909.github.io/ldccr/reference/GimeiAddresses.html</loc>
+  </url>
+  <url>
+    <loc>https://paithiov909.github.io/ldccr/reference/GimeiNames.html</loc>
+  </url>
+  <url>
     <loc>https://paithiov909.github.io/ldccr/reference/NekoText.html</loc>
   </url>
   <url>
@@ -38,9 +44,6 @@
   </url>
   <url>
     <loc>https://paithiov909.github.io/ldccr/reference/parse_jrte_reasoning.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/pipe.html</loc>
   </url>
   <url>
     <loc>https://paithiov909.github.io/ldccr/reference/read_aozora.html</loc>
