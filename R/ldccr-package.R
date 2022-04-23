@@ -8,7 +8,8 @@
 #' @keywords internal
 "_PACKAGE"
 
-###
+#' @importFrom utils globalVariables
+utils::globalVariables("where")
 
 #' Package internal environment
 #' @noRd

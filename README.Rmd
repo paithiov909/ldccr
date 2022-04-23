@@ -9,6 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+set.seed(289)
 require(ldccr)
 ```
 
@@ -47,10 +48,10 @@ This package provides:
 ```{r aozora_example}
 if (!dir.exists("cache")) dir.create("cache")
 
-text <- ldccr::AozoraBunkoSnapshot %>%
-  dplyr::sample_n(1L) %>%
-  dplyr::pull("テキストファイルURL") %>%
-  ldccr::read_aozora(directory = "cache") %>%
+text <- ldccr::AozoraBunkoSnapshot |>
+  dplyr::sample_n(1L) |>
+  dplyr::pull("テキストファイルURL") |>
+  ldccr::read_aozora(directory = "cache") |>
   readr::read_lines()
 
 dplyr::glimpse(text)

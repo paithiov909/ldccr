@@ -39,14 +39,14 @@ This package provides:
 ``` r
 if (!dir.exists("cache")) dir.create("cache")
 
-text <- ldccr::AozoraBunkoSnapshot %>%
-  dplyr::sample_n(1L) %>%
-  dplyr::pull("テキストファイルURL") %>%
-  ldccr::read_aozora(directory = "cache") %>%
+text <- ldccr::AozoraBunkoSnapshot |>
+  dplyr::sample_n(1L) |>
+  dplyr::pull("テキストファイルURL") |>
+  ldccr::read_aozora(directory = "cache") |>
   readr::read_lines()
 
 dplyr::glimpse(text)
-#>  chr [1:331] "フランダースの犬" "A Dog of Flanders" ...
+#>  chr [1:35] "悪魔の尾" "宮原晃一郎" ...
 ```
 
 ## License

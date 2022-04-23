@@ -5,7 +5,7 @@
 \alias{AozoraBunkoSnapshot}
 \title{Meta data of text files published on Aozora Bunko}
 \format{
-An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 18056 rows and 55 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18378 rows and 55 columns.
 }
 \source{
 \url{http://www.aozora.gr.jp/index_pages/list_person_all_extended_utf8.zip}
