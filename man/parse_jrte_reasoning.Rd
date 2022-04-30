@@ -10,7 +10,7 @@ parse_jrte_reasoning(tbl)
 \item{tbl}{A tibble returned from \code{read_jrte} which name is \code{rte.*.tsv}.}
 }
 \value{
-tibble
+A tibble.
 }
 \description{
 Parse reasoning column of 'rte.*.tsv'

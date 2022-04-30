@@ -2,7 +2,7 @@
 % Please edit documentation in R/ldnws-reader.R
 \name{read_ldnws}
 \alias{read_ldnws}
-\title{Livedoor News Corpus Parser}
+\title{Read the Livedoor News Corpus}
 \usage{
 read_ldnws(
   url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
@@ -28,7 +28,7 @@ Download and read the Livedoor News Corpus.
 The result of this function is memoised with \code{memoise::memoise} internally.
 }
 \details{
-This function downloads the Livedoor News Corpus and parses it to tibble.
+This function downloads the Livedoor News Corpus and parses it to a tibble.
 For details about the Livedoor News Corpus, please see
 \href{https://www.rondhuit.com/download.html#ldcc}{this page}.
 }

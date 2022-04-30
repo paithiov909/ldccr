@@ -2,7 +2,7 @@
 % Please edit documentation in R/jrte-reader.R
 \name{read_jrte}
 \alias{read_jrte}
-\title{JRTE Coprus Parser}
+\title{Read the JRTE Corpus}
 \usage{
 read_jrte(
   url = "https://github.com/megagonlabs/jrte-corpus/archive/refs/heads/master.zip",
@@ -19,12 +19,12 @@ read_jrte(
 
 \item{keep}{List. File names to parse and keep in returned value.}
 
-\item{keep_rhr}{Logical. If true, function keeps \code{rhr.tsv}.}
+\item{keep_rhr}{Logical. If supplied \code{TRUE}, keeps \code{rhr.tsv}.}
 
-\item{keep_pn}{Logical. If true, function keeps \code{pn.tsv}.}
+\item{keep_pn}{Logical. If supplied \code{TRUE}, keeps \code{pn.tsv}.}
 }
 \value{
-list of tibbles
+A list of tibbles.
 }
 \description{
 Download and read the Japanese Realistic Textual Entailment Corpus.

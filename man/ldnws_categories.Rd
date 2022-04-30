@@ -2,7 +2,7 @@
 % Please edit documentation in R/ldnws-reader.R
 \name{ldnws_categories}
 \alias{ldnws_categories}
-\title{List of Categories}
+\title{List of categories of the Livedoor News Corpus}
 \usage{
 ldnws_categories(
   keep = c("dokujo-tsushin", "it-life-hack", "kaden-channel", "livedoor-homme",
@@ -16,5 +16,5 @@ ldnws_categories(
 list
 }
 \description{
-List of Categories
+List of categories of the Livedoor News Corpus
 }

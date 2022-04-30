@@ -1,4 +1,4 @@
-#' List of Categories
+#' List of categories of the Livedoor News Corpus
 #'
 #' @param keep Character vector. File names to parse.
 #' @return list
@@ -55,13 +55,13 @@ read_ldnws_impl <- function() {
   }
 }
 
-#' Livedoor News Corpus Parser
+#' Read the Livedoor News Corpus
 #'
 #' Download and read the Livedoor News Corpus.
 #' The result of this function is memoised with \code{memoise::memoise} internally.
 #'
 #' @details
-#' This function downloads the Livedoor News Corpus and parses it to tibble.
+#' This function downloads the Livedoor News Corpus and parses it to a tibble.
 #' For details about the Livedoor News Corpus, please see
 #' \href{https://www.rondhuit.com/download.html#ldcc}{this page}.
 #'

@@ -11,7 +11,7 @@ parse_jrte_judges(tbl)
 (this function cannot parse judges of the \code{pn} dataset).}
 }
 \value{
-tibble
+A tibble.
 }
 \description{
 Parse judges column of 'rte.*.tsv'

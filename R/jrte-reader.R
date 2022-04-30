@@ -54,7 +54,7 @@ read_jrte_rte_impl <- function() {
   }
 }
 
-#' JRTE Coprus Parser
+#' Read the JRTE Corpus
 #'
 #' Download and read the Japanese Realistic Textual Entailment Corpus.
 #' The result of this function is memoised with \code{memoise::memoise} internally.
@@ -62,9 +62,9 @@ read_jrte_rte_impl <- function() {
 #' @param url String.
 #' @param exdir String. Path to tempolarily unzip text files.
 #' @param keep List. File names to parse and keep in returned value.
-#' @param keep_rhr Logical. If true, function keeps `rhr.tsv`.
-#' @param keep_pn Logical. If true, function keeps `pn.tsv`.
-#' @return list of tibbles
+#' @param keep_rhr Logical. If supplied `TRUE`, keeps `rhr.tsv`.
+#' @param keep_pn Logical. If supplied `TRUE`, keeps `pn.tsv`.
+#' @return A list of tibbles.
 #' @export
 read_jrte <- function(url = "https://github.com/megagonlabs/jrte-corpus/archive/refs/heads/master.zip",
                       exdir = tempdir(),
@@ -73,8 +73,6 @@ read_jrte <- function(url = "https://github.com/megagonlabs/jrte-corpus/archive/
                       keep_pn = FALSE) {
   on.exit(message("Done."))
 
-  ## Download gz file if that untared files never exist.
-  ## CHANGES.txt and LICENSE.txt will be deleted.
   if (!is.null(url)) {
     tmp <- tempfile(pattern = ".zip", file.path(exdir))
     download.file(url, tmp)

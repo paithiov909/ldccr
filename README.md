@@ -24,11 +24,11 @@ This package provides:
 
 ### Monolingual
 
-| …                  | Name                                                          | License                                                               | Link                                                  |
-|--------------------|---------------------------------------------------------------|-----------------------------------------------------------------------|-------------------------------------------------------|
-| :heavy_check_mark: | Live Door News Corpus                                         | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/)  | [\#](http://www.rondhuit.com/download.html#ldcc)      |
-| :heavy_check_mark: | Japanese Realistic Textual Entailment Corpus                  | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus)      |
-| :x:                | JEITA Public Morphologically Tagged Corpus (in ChaSen format) | Unknown                                                               | [\#](https://github.com/julianbetz/yokome-jpn-corpus) |
+| …                  | Name                                         | License                                                               | Link                                             |
+|--------------------|----------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------|
+| :heavy_check_mark: | Live Door News Corpus                        | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/)  | [\#](http://www.rondhuit.com/download.html#ldcc) |
+| :heavy_check_mark: | Japanese Realistic Textual Entailment Corpus | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus) |
+| :heavy_check_mark: | ja.text8 corpus                              | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)           | [\#](https://github.com/Hironsan/ja.text8)       |
 
 ### Multilingual
 

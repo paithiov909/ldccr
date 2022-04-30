@@ -1,6 +1,7 @@
 #' Parse reasoning column of 'rte.*.tsv'
+#'
 #' @param tbl A tibble returned from \code{read_jrte} which name is `rte.*.tsv`.
-#' @return tibble
+#' @return A tibble.
 #' @export
 parse_jrte_reasoning <- function(tbl) {
   reasons <-
@@ -25,13 +26,14 @@ parse_jrte_reasoning <- function(tbl) {
     dplyr::select(!.data$reasoning) %>%
     dplyr::left_join(reasons, by = "rowid")
 
-  return(res)
+  return(tibble::as_tibble(res))
 }
 
 #' Parse judges column of 'rte.*.tsv'
+#'
 #' @param tbl A tibble returned from \code{read_jrte} which name is `rte.*.tsv`
 #' (this function cannot parse judges of the `pn` dataset).
-#' @return tibble
+#' @return A tibble.
 #' @keywords internal
 parse_jrte_judges <- function(tbl) {
   judges <-
@@ -56,5 +58,5 @@ parse_jrte_judges <- function(tbl) {
     dplyr::select(!.data$judges) %>%
     dplyr::left_join(judges, by = "rowid")
 
-  return(res)
+  return(tibble::as_tibble(res))
 }
