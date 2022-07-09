@@ -5,8 +5,8 @@ list_all <- unzip(tmp, exdir = tempdir())
 
 AozoraBunkoSnapshot <- readr::read_csv(list_all)
 
-AozoraBunkoSnapshot <- AozoraBunkoSnapshot %>%
-  dplyr::mutate(作品ID = as.integer(作品ID), 人物ID = as.integer(人物ID)) %>%
+AozoraBunkoSnapshot <- AozoraBunkoSnapshot |>
+  dplyr::mutate(作品ID = as.integer(作品ID), 人物ID = as.integer(人物ID)) |>
   dplyr::mutate_if(is.integer, ~ as.factor(.))
 
 usethis::use_data(AozoraBunkoSnapshot, overwrite = TRUE)
