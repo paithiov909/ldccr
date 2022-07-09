@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ldccr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.9.20220709</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,26 +48,33 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">read_aozora</span><span class="op">(</span>
-  url <span class="op">=</span> <span class="st">"https://www.aozora.gr.jp/cards/000081/files/472_ruby_654.zip"</span>,
-  txtname <span class="op">=</span> <span class="cn">NULL</span>,
-  directory <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"cache"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">read_aozora</span><span class="op">(</span></span>
+<span>  url <span class="op">=</span> <span class="st">"https://www.aozora.gr.jp/cards/000081/files/472_ruby_654.zip"</span>,</span>
+<span>  txtname <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  directory <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"cache"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>url</dt>
 <dd><p>URL of text download link.</p></dd>
+
+
 <dt>txtname</dt>
 <dd><p>New file name as which text is saved.
 If <code>NULL</code> provided, keeps name of the source file.</p></dd>
+
+
 <dt>directory</dt>
 <dd><p>Path where new file is saved.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>The path to the file downloaded.</p>
+    
+
+<p>The path to the file downloaded.</p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -79,7 +86,7 @@ If <code>NULL</code> provided, keeps name of the source file.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

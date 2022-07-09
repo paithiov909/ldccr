@@ -12,7 +12,7 @@ The result of this function is memoised with memoise::memoise internally."><!-- 
     
     <a class="navbar-brand me-2" href="../index.html">ldccr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.9.20220709</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,31 +51,42 @@ The result of this function is memoised with <code><a href="https://memoise.r-li
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">read_jrte</span><span class="op">(</span>
-  url <span class="op">=</span> <span class="st">"https://github.com/megagonlabs/jrte-corpus/archive/refs/heads/master.zip"</span>,
-  exdir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,
-  keep <span class="op">=</span> <span class="fu"><a href="jrte_rte_files.html">jrte_rte_files</a></span><span class="op">(</span><span class="op">)</span>,
-  keep_rhr <span class="op">=</span> <span class="cn">FALSE</span>,
-  keep_pn <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">read_jrte</span><span class="op">(</span></span>
+<span>  url <span class="op">=</span> <span class="st">"https://github.com/megagonlabs/jrte-corpus/archive/refs/heads/master.zip"</span>,</span>
+<span>  exdir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  keep <span class="op">=</span> <span class="fu"><a href="jrte_rte_files.html">jrte_rte_files</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  keep_rhr <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  keep_pn <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>url</dt>
 <dd><p>String.</p></dd>
+
+
 <dt>exdir</dt>
 <dd><p>String. Path to tempolarily unzip text files.</p></dd>
+
+
 <dt>keep</dt>
 <dd><p>List. File names to parse and keep in returned value.</p></dd>
+
+
 <dt>keep_rhr</dt>
 <dd><p>Logical. If supplied <code>TRUE</code>, keeps <code>rhr.tsv</code>.</p></dd>
+
+
 <dt>keep_pn</dt>
 <dd><p>Logical. If supplied <code>TRUE</code>, keeps <code>pn.tsv</code>.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A list of tibbles.</p>
+    
+
+<p>A list of tibbles.</p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -87,7 +98,7 @@ The result of this function is memoised with <code><a href="https://memoise.r-li
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>
