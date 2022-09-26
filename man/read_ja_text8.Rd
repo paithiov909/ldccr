@@ -5,8 +5,8 @@
 \title{Read the ja.text8 corpus}
 \usage{
 read_ja_text8(
- 
-    url = "https://s3-ap-northeast-1.amazonaws.com/dev.tech-sketch.jp/chakki/public/ja.text8.zip",
+  url =
+    "https://s3-ap-northeast-1.amazonaws.com/dev.tech-sketch.jp/chakki/public/ja.text8.zip",
   size = NULL
 )
 }

@@ -1,6 +1,6 @@
 Package: ldccr
 Title: Utilities for Various Japanese Corpora
-Version: 0.0.9.20220709
+Version: 0.0.10.20220927
 Authors@R: 
     person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre"))
 Maintainer: Akiru Kato <paithiov909@gmail.com>
@@ -23,11 +23,12 @@ Imports:
     stringi,
     stringr,
     tibble,
-    utils
+    utils,
+    yesno
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
