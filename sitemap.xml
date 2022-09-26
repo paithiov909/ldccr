@@ -28,6 +28,9 @@
     <loc>https://paithiov909.github.io/ldccr/reference/NekoText.html</loc>
   </url>
   <url>
+    <loc>https://paithiov909.github.io/ldccr/reference/download_unidic.html</loc>
+  </url>
+  <url>
     <loc>https://paithiov909.github.io/ldccr/reference/index.html</loc>
   </url>
   <url>
@@ -56,5 +59,8 @@
   </url>
   <url>
     <loc>https://paithiov909.github.io/ldccr/reference/read_ldnws.html</loc>
+  </url>
+  <url>
+    <loc>https://paithiov909.github.io/ldccr/reference/unidic_availables.html</loc>
   </url>
 </urlset>
