@@ -13,11 +13,11 @@ read_aozora_impl <- function() {
     unlink(tmp)
 
     if (length(text_file) > 1) {
-      location <- stringr::str_which(text_file, ".txt$")
-      text_file <- text_file[location]
+      location <- stringi::stri_detect(text_file, regex = ".txt$")
+      text_file <- text_file[location][1]
     }
     if (is.null(txtname)) {
-      txtname <- stringr::str_split(basename(text_file), ".txt$", simplify = TRUE)[1]
+      txtname <- stringi::stri_split(basename(text_file), regex = ".txt$")[[1]][1]
     }
 
     connection <- file(text_file, open = "rt")

@@ -23,7 +23,7 @@ parse_jrte_reasoning <- function(tbl) {
     })
 
   res <- tbl %>%
-    dplyr::select(!.data$reasoning) %>%
+    dplyr::select(!"reasoning") %>%
     dplyr::left_join(reasons, by = "rowid")
 
   return(tibble::as_tibble(res))
@@ -55,7 +55,7 @@ parse_jrte_judges <- function(tbl) {
     })
 
   res <- tbl %>%
-    dplyr::select(!.data$judges) %>%
+    dplyr::select(!"judges") %>%
     dplyr::left_join(judges, by = "rowid")
 
   return(tibble::as_tibble(res))

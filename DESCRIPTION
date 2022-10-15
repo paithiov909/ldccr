@@ -1,6 +1,6 @@
 Package: ldccr
 Title: Utilities for Various Japanese Corpora
-Version: 0.0.10.20220927
+Version: 0.0.11.20220927
 Authors@R: 
     person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre"))
 Maintainer: Akiru Kato <paithiov909@gmail.com>
@@ -21,7 +21,6 @@ Imports:
     readr,
     rlang,
     stringi,
-    stringr,
     tibble,
     utils,
     yesno
