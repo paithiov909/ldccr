@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-09-26T15:49Z
+last_built: 2022-10-15T01:08Z
 urls:
   reference: https://paithiov909.github.io/ldccr/reference
   article: https://paithiov909.github.io/ldccr/articles
