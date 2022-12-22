@@ -38,7 +38,7 @@ parse_jrte_reasoning <- function(tbl) {
 parse_jrte_judges <- function(tbl) {
   judges <-
     RcppSimdJson::fparse(tbl$judges, empty_array = NA, empty_object = NA) %>%
-    purrr::imap_dfr(function(elem, idx) {
+    purrr::imap(function(elem, idx) {
       if (anyNA(elem)) {
         data.frame(
           rowid = idx,
@@ -52,7 +52,8 @@ parse_jrte_judges <- function(tbl) {
           n_non_entailment = as.integer(elem$`1`)
         )
       }
-    })
+    }) %>%
+    purrr::list_rbind()
 
   res <- tbl %>%
     dplyr::select(!"judges") %>%

@@ -36,20 +36,22 @@ ldnws_categories <- function(keep = c(
 #' @noRd
 read_ldnws_impl <- function() {
   function(exdir, keep, collapse) {
-    res <- purrr::map_dfr(keep, function(dir) {
+    res <- purrr::map(keep, function(dir) {
       files <- list.files(file.path(exdir, "text", dir), full.names = TRUE, recursive = FALSE)
       message("Parsing ", dir, "...")
-      purrr::map_dfr(files, function(file) {
+      purrr::map(files, function(file) {
         lines <- readr::read_lines(file)
-        return(data.frame(
+        data.frame(
           category = dir,
           file_path = file,
           source = lines[1],
           time_stamp = lines[2],
           body = paste(lines[3:length(lines)], collapse = collapse)
-        ))
+        )
       })
     }) %>%
+      purrr::flatten() %>%
+      purrr::list_rbind() %>%
       dplyr::mutate(category = as.factor(.data$category))
     return(tibble::as_tibble(res))
   }
