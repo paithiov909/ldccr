@@ -4,6 +4,9 @@
 # ldccr
 
 <!-- badges: start -->
+
+[![ldccr status
+badge](https://paithiov909.r-universe.dev/badges/ldccr)](https://paithiov909.r-universe.dev)
 <!-- badges: end -->
 
 ## Overview
@@ -19,6 +22,18 @@ This package provides:
     (non proprietary).
 2.  a downloader of zipped text files published on [Aozora
     Bunko](https://www.aozora.gr.jp/).
+
+## Installation
+
+``` r
+# Enable repository from paithiov909
+options(repos = c(
+  paithiov909 = "https://paithiov909.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"))
+
+# Download and install ldccr in R
+install.packages("ldccr")
+```
 
 ## Supported Corpora
 
@@ -46,7 +61,7 @@ text <- ldccr::AozoraBunkoSnapshot |>
   readr::read_lines()
 
 dplyr::glimpse(text)
-#>  chr [1:35] "悪魔の尾" "宮原晃一郎" ...
+#>  chr [1:6] "〔甘藍の球は弾けて〕" "宮沢賢治" "甘藍の球は弾けて" ...
 ```
 
 ## License
