@@ -9,8 +9,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-set.seed(289)
-require(ldccr)
+# set.seed(289)
+pkgload::load_all()
 ```
 
 # ldccr
@@ -33,13 +33,7 @@ This package provides:
 ## Installation
 
 ```r
-# Enable repository from paithiov909
-options(repos = c(
-  paithiov909 = "https://paithiov909.r-universe.dev",
-  CRAN = "https://cloud.r-project.org"))
-
-# Download and install ldccr in R
-install.packages("ldccr")
+install.packages("ldccr", repos = c("https://paithiov909.r-universe.dev", "https://cloud.r-project.org"))
 ```
 
 ## Supported Corpora
@@ -73,4 +67,3 @@ dplyr::glimpse(text)
 ## License
 
 MIT license.
-

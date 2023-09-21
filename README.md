@@ -26,13 +26,7 @@ This package provides:
 ## Installation
 
 ``` r
-# Enable repository from paithiov909
-options(repos = c(
-  paithiov909 = "https://paithiov909.r-universe.dev",
-  CRAN = "https://cloud.r-project.org"))
-
-# Download and install ldccr in R
-install.packages("ldccr")
+install.packages("ldccr", repos = c("https://paithiov909.r-universe.dev", "https://cloud.r-project.org"))
 ```
 
 ## Supported Corpora
@@ -61,7 +55,7 @@ text <- ldccr::AozoraBunkoSnapshot |>
   readr::read_lines()
 
 dplyr::glimpse(text)
-#>  chr [1:6] "〔甘藍の球は弾けて〕" "宮沢賢治" "甘藍の球は弾けて" ...
+#>  chr [1:1512] "小公女" "A LITTLE PRINCESS" ...
 ```
 
 ## License
