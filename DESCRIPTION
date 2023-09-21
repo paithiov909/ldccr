@@ -1,6 +1,6 @@
 Package: ldccr
 Title: Utilities for Various Japanese Corpora
-Version: 0.2.0.20230922
+Version: 0.2.1.20230922
 Authors@R:c(
     person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre")),
     person("Saurabh", "Shrivastava", role = "ctb")

@@ -34,9 +34,11 @@ utils::globalVariables("where")
 #' @export
 #' @useDynLib ldccr, .registration = TRUE
 read_srt <- function(path, collapse = "\n") {
-  stopifnot(is.character(collapse))
-
   path <- path.expand(path)
+  stopifnot(
+    is.character(collapse),
+    file.exists(path)
+  )
   ret <- read_srt_impl(path, collapse = collapse)
 
   ret$start <- stringi::stri_replace_all_regex(ret$start, pattern = ",", replacement = "\\.")

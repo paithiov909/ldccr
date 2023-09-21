@@ -25,6 +25,8 @@ std::vector<std::string> &split(
   return elems;
 }
 
+//' @noRd
+//' @keywords internal
 // [[Rcpp::export]]
 Rcpp::DataFrame read_srt_impl(
     std::string fileName,
@@ -42,14 +44,12 @@ Rcpp::DataFrame read_srt_impl(
    */
   while (std::getline(infile, line)) {
     line.erase(remove(line.begin(), line.end(), '\r'), line.end());
-
     if (line.compare("")) {
       if (!turn) {
         cue = line;
         turn++;
         continue;
       }
-
       if (line.find("-->") != std::string::npos) {
         timeLine += line;
 
@@ -73,14 +73,13 @@ Rcpp::DataFrame read_srt_impl(
       comLines.push_back(completeLine);
       completeLine = timeLine = "";
     }
-
-    if (infile.eof()) {
-      subNos.push_back(cue);
-      starts.push_back(start);
-      ends.push_back(end);
-      comLines.push_back(completeLine);
-    }
   }
+  // insert last remaining subtitle
+  subNos.push_back(cue);
+  starts.push_back(start);
+  ends.push_back(end);
+  comLines.push_back(completeLine);
+
 
   return Rcpp::DataFrame::create(
     _["sub_id"] = wrap(subNos),
