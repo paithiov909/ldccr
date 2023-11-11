@@ -21,7 +21,7 @@ read_ldnws(
 \item{collapse}{String with which \code{base::paste} collapses lines.}
 }
 \value{
-tibble
+A tibble.
 }
 \description{
 Download and read the Livedoor News Corpus.

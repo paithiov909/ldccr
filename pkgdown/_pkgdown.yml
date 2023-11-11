@@ -7,3 +7,29 @@ template:
 
 home:
   strip_header: true
+
+reference:
+  - title: "Corpora Tools"
+    contents:
+      - read_aozora
+      - read_ja_text8
+      - read_jrte
+      - read_ldnws
+      - read_srt
+  - title: "Utilities"
+    contents:
+      - clean_emoji
+      - clean_url
+      - download_unidic
+      - is_within_era
+      - jrte_rte_files
+      - ldnws_categories
+      - parse_jrte_reasoning
+      - parse_to_jdate
+      - unidic_availables
+  - title: "Datasets"
+    contents:
+      - AozoraBunkoSnapshot
+      - GimeiAddresses
+      - GimeiNames
+      - NekoText

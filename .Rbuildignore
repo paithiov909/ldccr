@@ -7,5 +7,6 @@
 ^pkgdown$
 ^unidic$
 ^\.github$
+^\.vscode$
 ^renovate\.json$
 ^LICENSE\.md$

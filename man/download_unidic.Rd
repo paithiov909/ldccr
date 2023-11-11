@@ -12,7 +12,7 @@ download_unidic(version = "latest", dirname = "unidic")
 \item{dirname}{String; directory where unzip the dictionary.}
 }
 \value{
-full path to \code{dirname} is returned invisibly.
+Full path to \code{dirname} is returned invisibly.
 }
 \description{
 Download 'UniDic' of specified version into \code{dirname}.

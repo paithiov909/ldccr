@@ -1,7 +1,7 @@
 #' Data for Textual Entailment
 #'
 #' @param keep Character vector. File names to parse.
-#' @return tsv file names
+#' @returns tsv file names.
 #' @export
 jrte_rte_files <- function(keep = c(
                              "rte.nlp2020_base",
@@ -64,7 +64,7 @@ read_jrte_rte_impl <- function() {
 #' @param keep List. File names to parse and keep in returned value.
 #' @param keep_rhr Logical. If supplied `TRUE`, keeps `rhr.tsv`.
 #' @param keep_pn Logical. If supplied `TRUE`, keeps `pn.tsv`.
-#' @return A list of tibbles.
+#' @returns A list of tibbles.
 #' @export
 read_jrte <- function(url = "https://github.com/megagonlabs/jrte-corpus/archive/refs/heads/master.zip",
                       exdir = tempdir(),

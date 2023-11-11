@@ -10,6 +10,7 @@
 #'
 #' @param url String.
 #' @param size Integer. If supplied, samples rows by this argument.
+#' @returns A tibble.
 #' @export
 read_ja_text8 <- function(url = "https://s3-ap-northeast-1.amazonaws.com/dev.tech-sketch.jp/chakki/public/ja.text8.zip",
                           size = NULL) {

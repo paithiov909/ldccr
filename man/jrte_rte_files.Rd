@@ -13,7 +13,7 @@ jrte_rte_files(
 \item{keep}{Character vector. File names to parse.}
 }
 \value{
-tsv file names
+tsv file names.
 }
 \description{
 Data for Textual Entailment

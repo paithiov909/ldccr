@@ -61,9 +61,7 @@ read_aozora_impl <- function() {
 #' @param txtname New file name as which text is saved.
 #' If `NULL` provided, keeps name of the source file.
 #' @param directory Path where new file is saved.
-#'
-#' @return The path to the file downloaded.
-#'
+#' @returns The path to the file downloaded.
 #' @export
 read_aozora <- function(url = "https://www.aozora.gr.jp/cards/000081/files/472_ruby_654.zip",
                         txtname = NULL,

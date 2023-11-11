@@ -15,6 +15,9 @@ read_ja_text8(
 
 \item{size}{Integer. If supplied, samples rows by this argument.}
 }
+\value{
+A tibble.
+}
 \description{
 Download and read the ja.text8 corpus as a tibble.
 }
