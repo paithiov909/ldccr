@@ -32,21 +32,6 @@ clean_emoji <- function(text, replacement = "") {
   stringi::stri_replace_all_regex(text, pattern = regexp, replacement = replacement)
 }
 
-#' Ensure if characters do not include certain characters
-#'
-#' @param text A character vector.
-#' @param patterns A character vector; patterns that should be censored.
-#' @returns Logicals.
-#' @export
-is_censored <- function(text, patterns) {
-  patterns <- stringi::stri_remove_empty_na(patterns)
-  stopifnot(
-    is.character(text),
-    is.character(patterns)
-  )
-  !is_uncensored_impl(text, patterns)
-}
-
 #' Check if dates are within Japanese era
 #'
 #' @param date Dates.

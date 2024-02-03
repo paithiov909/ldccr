@@ -7,9 +7,3 @@ read_srt_impl <- function(fileName, collapse = "\n") {
     .Call(`_ldccr_read_srt_impl`, fileName, collapse)
 }
 
-#' @noRd
-#' @keywords internal
-is_uncensored_impl <- function(x, dict) {
-    .Call(`_ldccr_is_uncensored_impl`, x, dict)
-}
-
