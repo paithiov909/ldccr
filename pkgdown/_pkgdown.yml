@@ -21,6 +21,7 @@ reference:
       - clean_emoji
       - clean_url
       - download_unidic
+      - is_censored
       - is_within_era
       - jrte_rte_files
       - ldnws_categories

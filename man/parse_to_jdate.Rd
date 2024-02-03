@@ -4,7 +4,7 @@
 \alias{parse_to_jdate}
 \title{Parse dates to Japanese dates}
 \usage{
-parse_to_jdate(date, format = NULL)
+parse_to_jdate(date, format)
 }
 \arguments{
 \item{date}{Dates.}

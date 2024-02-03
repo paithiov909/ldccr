@@ -33,11 +33,11 @@ install.packages("ldccr", repos = c("https://paithiov909.r-universe.dev", "https
 
 ### Monolingual
 
-| …                  | Name                                         | License                                                               | Link                                             |
-|--------------------|----------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------|
-| :heavy_check_mark: | Live Door News Corpus                        | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/)  | [\#](http://www.rondhuit.com/download.html#ldcc) |
-| :heavy_check_mark: | Japanese Realistic Textual Entailment Corpus | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus) |
-| :heavy_check_mark: | ja.text8 corpus                              | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)           | [\#](https://github.com/Hironsan/ja.text8)       |
+| …                    | Name                                         | License                                                               | Link                                             |
+| -------------------- | -------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------ |
+| :heavy\_check\_mark: | Live Door News Corpus                        | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/)  | [\#](http://www.rondhuit.com/download.html#ldcc) |
+| :heavy\_check\_mark: | Japanese Realistic Textual Entailment Corpus | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus) |
+| :heavy\_check\_mark: | ja.text8 corpus                              | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)           | [\#](https://github.com/Hironsan/ja.text8)       |
 
 ### Multilingual
 
@@ -55,7 +55,7 @@ text <- ldccr::AozoraBunkoSnapshot |>
   readr::read_lines()
 
 dplyr::glimpse(text)
-#>  chr [1:1512] "小公女" "A LITTLE PRINCESS" ...
+#>  chr [1:16] "雪子さんの泥棒よけ" "夢野久作" ...
 ```
 
 ## License

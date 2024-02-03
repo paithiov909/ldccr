@@ -4,7 +4,7 @@
 \name{ldccr-package}
 \alias{ldccr}
 \alias{ldccr-package}
-\title{Utilities for Various Japanese Corpora}
+\title{ldccr: Utilities for Various Japanese Corpora}
 \description{
 The goal of ldccr package is to make easy to use Japanese language resources. This package provides parsers for several Japanese corpora that are free or open licensed and a downloader of zipped text files published on Aozora Bunko.
 }

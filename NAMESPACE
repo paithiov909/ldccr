@@ -3,6 +3,7 @@
 export(clean_emoji)
 export(clean_url)
 export(download_unidic)
+export(is_censored)
 export(is_within_era)
 export(jrte_rte_files)
 export(ldnws_categories)

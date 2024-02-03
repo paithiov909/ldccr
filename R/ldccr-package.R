@@ -1,15 +1,10 @@
-#' Utilities for Various Japanese Corpora
-## ----
 #' @import dplyr
 #' @import rlang
-#' @importFrom utils download.file untar unzip
+#' @importFrom utils download.file untar unzip globalVariables
 #' @useDynLib ldccr, .registration = TRUE
-## ----
-#' @docType package
 #' @keywords internal
 "_PACKAGE"
 
-#' @importFrom utils globalVariables
 utils::globalVariables("where")
 
 #' Package internal environment

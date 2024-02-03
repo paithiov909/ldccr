@@ -22,9 +22,22 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// is_uncensored_impl
+Rcpp::LogicalVector is_uncensored_impl(std::vector<std::string> x, std::vector<std::string> dict);
+RcppExport SEXP _ldccr_is_uncensored_impl(SEXP xSEXP, SEXP dictSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type x(xSEXP);
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type dict(dictSEXP);
+    rcpp_result_gen = Rcpp::wrap(is_uncensored_impl(x, dict));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ldccr_read_srt_impl", (DL_FUNC) &_ldccr_read_srt_impl, 2},
+    {"_ldccr_is_uncensored_impl", (DL_FUNC) &_ldccr_is_uncensored_impl, 2},
     {NULL, NULL, 0}
 };
 

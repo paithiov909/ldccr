@@ -4,7 +4,6 @@
  *
  * written by Saurabh Shrivastava.
  */
-
 #include <iostream>
 #include <fstream>
 #include <Rcpp.h>
@@ -80,11 +79,10 @@ Rcpp::DataFrame read_srt_impl(
   ends.push_back(end);
   comLines.push_back(completeLine);
 
-
   return Rcpp::DataFrame::create(
-    _["sub_id"] = wrap(subNos),
-    _["start"]  = wrap(starts),
-    _["end"]    = wrap(ends),
-    _["text"]   = wrap(comLines)
+    _["sub_id"] = Rcpp::wrap(subNos),
+    _["start"]  = Rcpp::wrap(starts),
+    _["end"]    = Rcpp::wrap(ends),
+    _["text"]   = Rcpp::wrap(comLines)
   );
 }
