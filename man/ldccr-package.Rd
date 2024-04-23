@@ -19,10 +19,5 @@ Useful links:
 \author{
 \strong{Maintainer}: Akiru Kato \email{paithiov909@gmail.com}
 
-Other contributors:
-\itemize{
-  \item Saurabh Shrivastava [contributor]
-}
-
 }
 \keyword{internal}

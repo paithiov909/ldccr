@@ -9,13 +9,3 @@
 #'
 #' @source \url{https://www.aozora.gr.jp/cards/000148/files/789_ruby_5639.zip}
 "NekoText"
-
-#' Japanese Dummy Names
-#'
-#' @source \url{https://github.com/willnet/gimei/blob/main/lib/data/names.yml}
-"GimeiNames"
-
-#' Japanese Dummy Addresses
-#'
-#' @source \url{https://github.com/willnet/gimei/blob/main/lib/data/addresses.yml}
-"GimeiAddresses"

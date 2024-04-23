@@ -8,4 +8,4 @@ AozoraBunkoSnapshot <- AozoraBunkoSnapshot |>
   dplyr::mutate(作品ID = as.integer(作品ID), 人物ID = as.integer(人物ID)) |>
   dplyr::mutate(across(where(is.integer), ~ as.factor(.)))
 
-usethis::use_data(AozoraBunkoSnapshot, overwrite = TRUE)
+usethis::use_data(AozoraBunkoSnapshot, overwrite = TRUE, compress = "xz")

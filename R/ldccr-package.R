@@ -1,11 +1,10 @@
 #' @import dplyr
 #' @import rlang
 #' @importFrom utils download.file untar unzip globalVariables
-#' @useDynLib ldccr, .registration = TRUE
 #' @keywords internal
 "_PACKAGE"
 
-utils::globalVariables("where")
+utils::globalVariables(c("where", "IPAdic", "IPAdicMatrixDef"))
 
 #' Package internal environment
 #' @noRd

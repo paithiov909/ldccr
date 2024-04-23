@@ -24,7 +24,7 @@ jrte_rte_files <- function(keep = c(
     ),
     several.ok = TRUE
   )
-  return(paste0(keep, ".tsv"))
+  paste0(keep, ".tsv")
 }
 
 #' @noRd
@@ -50,7 +50,7 @@ read_jrte_rte_impl <- function() {
       df %>%
         parse_jrte_judges()
     })
-    return(purrr::set_names(res, keep))
+    purrr::set_names(res, keep)
   }
 }
 
@@ -118,5 +118,5 @@ read_jrte <- function(url = "https://github.com/megagonlabs/jrte-corpus/archive/
         tibble::rowid_to_column()
     }
   }
-  return(res)
+  res
 }

@@ -15,7 +15,6 @@ reference:
       - read_ja_text8
       - read_jrte
       - read_ldnws
-      - read_srt
   - title: "Utilities"
     contents:
       - clean_emoji
@@ -30,6 +29,4 @@ reference:
   - title: "Datasets"
     contents:
       - AozoraBunkoSnapshot
-      - GimeiAddresses
-      - GimeiNames
       - NekoText

@@ -6,7 +6,6 @@ read_aozora_impl <- function() {
       rlang::is_character(url),
       !is.na(url) || !rlang::is_empty(url)
     )
-
     tmp <- tempfile(fileext = ".zip")
     download.file(url, tmp, quiet = TRUE)
     text_file <- unzip(tmp, exdir = tempdir())
@@ -19,12 +18,10 @@ read_aozora_impl <- function() {
     if (is.null(txtname)) {
       txtname <- stringi::stri_split(basename(text_file), regex = ".txt$")[[1]][1]
     }
-
     connection <- file(text_file, open = "rt")
     on.exit(close(connection))
 
     new_file <- file.path(directory, paste0(txtname, ".txt"))
-
     flag <- TRUE
 
     out <- connection %>%
@@ -48,8 +45,9 @@ read_aozora_impl <- function() {
         }
       }) %>%
       stringi::stri_omit_empty_na()
+
     readr::write_lines(out, new_file)
-    return(new_file)
+    new_file
   }
 }
 
@@ -71,5 +69,5 @@ read_aozora <- function(url = "https://www.aozora.gr.jp/cards/000081/files/472_r
     res <-
       rlang::env_get(.pkgenv, "read_aozora", default = read_aozora_impl())(url, txtname, directory)
   }
-  return(res)
+  res
 }

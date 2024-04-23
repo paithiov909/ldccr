@@ -29,7 +29,7 @@ ldnws_categories <- function(keep = c(
     ),
     several.ok = TRUE
   )
-  return(as.list(keep))
+  as.list(keep)
 }
 
 
@@ -40,7 +40,7 @@ read_ldnws_impl <- function() {
       files <- list.files(file.path(exdir, "text", dir), full.names = TRUE, recursive = FALSE)
       message("Parsing ", dir, "...")
       purrr::map(files, function(file) {
-        lines <- readr::read_lines(file)
+        lines <- readr::read_lines(file, progress = FALSE)
         data.frame(
           category = dir,
           file_path = file,
@@ -53,7 +53,8 @@ read_ldnws_impl <- function() {
       purrr::flatten() %>%
       purrr::list_rbind() %>%
       dplyr::mutate(category = as.factor(.data$category))
-    return(tibble::as_tibble(res))
+
+    tibble::as_tibble(res)
   }
 }
 
@@ -101,6 +102,5 @@ read_ldnws <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.ta
     res <-
       rlang::env_get(.pkgenv, "read_ldnws", default = read_ldnws_impl())(exdir, keep, collapse)
   }
-
-  return(res)
+  res
 }

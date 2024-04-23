@@ -21,7 +21,7 @@ read_ja_text8 <- function(url = "https://s3-ap-northeast-1.amazonaws.com/dev.tec
     readr::read_file(tmp) %>%
     stringi::stri_split_boundaries(type = "sentence") %>%
     unlist()
-  if (!missing(size)) {
+  if (!is.null(size)) {
     sentences <- sample(sentences, size, replace = (size > length(sentences)))
   }
   tibble::tibble(
