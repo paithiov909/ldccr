@@ -37,17 +37,21 @@ ldnws_categories <- function(keep = c(
 read_ldnws_impl <- function() {
   function(exdir, keep, collapse, include_title) {
     first_line <- if (include_title) 3 else 4
+    delim <- "\ufefe" # "Zero Width No-Break Space"
     res <- purrr::map(keep, function(dir) {
       message("Parsing ", dir, "...")
       files <- file.path(exdir, "text", dir) %>%
         list.files(full.names = TRUE, recursive = FALSE)
       readr::read_delim(
         files,
-        delim = "\ufefe", # a dummy delimiter. "Zero Width No-Break Space"
+        delim = delim, # use dummy delimiter that never occurs in the corpus
+        quote = "",
         col_names = "body",
         col_types = "c",
-        progress = FALSE,
+        na = "NA",
         id = "file_path",
+        skip_empty_rows = FALSE,
+        progress = FALSE
       )
     }) %>%
       purrr::list_rbind() %>%
@@ -99,7 +103,7 @@ read_ldnws <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.ta
                        keep = ldnws_categories(),
                        collapse = "\n\n",
                        include_title = TRUE) {
-  ## Download gzipped file.
+  # Download gzipped file.
   if (!is.null(url)) {
     tmp <- tempfile(tmpdir = file.path(exdir), fileext = ".tar.gz")
     utils::download.file(url, tmp)
