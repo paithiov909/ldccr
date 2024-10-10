@@ -1,72 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/404.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/index.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/AozoraBunkoSnapshot.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/NekoText.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/clean_emoji.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/clean_url.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/download_unidic.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/is_within_era.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/jrte_rte_files.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/ldccr-package.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/ldnws_categories.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/parse_jrte_judges.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/parse_jrte_reasoning.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/parse_to_jdate.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/read_aozora.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/read_ja_text8.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/read_jrte.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/read_ldnws.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/ldccr/reference/unidic_availables.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://paithiov909.github.io/ldccr/404.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/LICENSE-text.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/LICENSE.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/authors.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/index.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/AozoraBunkoSnapshot.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/NekoText.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/clean_emoji.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/clean_url.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/download_unidic.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/index.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/is_within_era.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/jrte_rte_files.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/ldccr-package.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/ldnws_categories.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/parse_jrte_judges.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/parse_jrte_reasoning.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/parse_to_jdate.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/read_aozora.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/read_ja_text8.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/read_jrte.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/read_ldnws.html</loc></url>
+<url><loc>https://paithiov909.github.io/ldccr/reference/unidic_availables.html</loc></url>
 </urlset>
+
