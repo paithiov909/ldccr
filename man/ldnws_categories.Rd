@@ -13,7 +13,7 @@ ldnws_categories(
 \item{keep}{Character vector. File names to parse.}
 }
 \value{
-A list.
+A character vector.
 }
 \description{
 List of categories of the Livedoor News Corpus

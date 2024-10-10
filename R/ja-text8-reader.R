@@ -20,11 +20,11 @@ read_ja_text8 <- function(url = "https://s3-ap-northeast-1.amazonaws.com/dev.tec
   sentences <-
     readr::read_file(tmp) %>%
     stringi::stri_split_boundaries(type = "sentence") %>%
-    unlist()
+    unlist(use.names = FALSE)
   if (!is.null(size)) {
     sentences <- sample(sentences, size, replace = (size > length(sentences)))
   }
-  tibble::tibble(
+  dplyr::tibble(
     doc_id = seq_along(sentences),
     text = sentences
   )

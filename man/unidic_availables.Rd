@@ -6,6 +6,9 @@
 \usage{
 unidic_availables()
 }
+\value{
+A list.
+}
 \description{
 List of available 'UniDic'
 }

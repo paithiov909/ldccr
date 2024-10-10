@@ -26,7 +26,7 @@ parse_jrte_reasoning <- function(tbl) {
     dplyr::select(!"reasoning") %>%
     dplyr::left_join(reasons, by = "rowid")
 
-  tibble::as_tibble(res)
+  dplyr::as_tibble(res)
 }
 
 #' Parse judges column of 'rte.*.tsv'
@@ -59,5 +59,5 @@ parse_jrte_judges <- function(tbl) {
     dplyr::select(!"judges") %>%
     dplyr::left_join(judges, by = "rowid")
 
-  tibble::as_tibble(res)
+  dplyr::as_tibble(res)
 }

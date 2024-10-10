@@ -1,4 +1,5 @@
 #' List of available 'UniDic'
+#' @returns A list.
 #' @export
 unidic_availables <- function() {
   RcppSimdJson::fload(

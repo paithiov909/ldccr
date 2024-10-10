@@ -13,7 +13,8 @@ read_jrte(
 )
 }
 \arguments{
-\item{url}{String.}
+\item{url}{String.
+If left to \code{NULL}, the function will skip downloading the file.}
 
 \item{exdir}{String. Path to tempolarily unzip text files.}
 

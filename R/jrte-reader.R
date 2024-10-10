@@ -4,14 +4,14 @@
 #' @returns tsv file names.
 #' @export
 jrte_rte_files <- function(keep = c(
-                             "rte.nlp2020_base",
-                             "rte.nlp2020_append",
-                             "rte.lrec2020_surf",
-                             "rte.lrec2020_sem_short",
-                             "rte.lrec2020_sem_long",
-                             "rte.lrec2020_me"
-                           )) {
-  keep <- match.arg(
+  "rte.nlp2020_base",
+  "rte.nlp2020_append",
+  "rte.lrec2020_surf",
+  "rte.lrec2020_sem_short",
+  "rte.lrec2020_sem_long",
+  "rte.lrec2020_me"
+)) {
+  keep <- rlang::arg_match(
     keep,
     c(
       "rte.nlp2020_base",
@@ -22,7 +22,7 @@ jrte_rte_files <- function(keep = c(
       # "rte.lrec2020_mlm",
       "rte.lrec2020_me"
     ),
-    several.ok = TRUE
+    multiple = TRUE
   )
   paste0(keep, ".tsv")
 }
@@ -46,11 +46,11 @@ read_jrte_rte_impl <- function() {
         ) %>%
         dplyr::mutate(across(where(is.character), ~ na_if(., ""))) %>%
         dplyr::mutate(across(where(is.character), ~ na_if(., "null"))) %>%
-        tibble::rowid_to_column()
+        dplyr::mutate(rowid = dplyr::row_number())
       df %>%
         parse_jrte_judges()
     })
-    purrr::set_names(res, keep)
+    rlang::set_names(res, keep)
   }
 }
 
@@ -60,6 +60,7 @@ read_jrte_rte_impl <- function() {
 #' The result of this function is memoised with \code{memoise::memoise} internally.
 #'
 #' @param url String.
+#' If left to \code{NULL}, the function will skip downloading the file.
 #' @param exdir String. Path to tempolarily unzip text files.
 #' @param keep List. File names to parse and keep in returned value.
 #' @param keep_rhr Logical. If supplied `TRUE`, keeps `rhr.tsv`.
@@ -71,52 +72,71 @@ read_jrte <- function(url = "https://github.com/megagonlabs/jrte-corpus/archive/
                       keep = jrte_rte_files(),
                       keep_rhr = FALSE,
                       keep_pn = FALSE) {
-  on.exit(message("Done."))
 
   if (!is.null(url)) {
-    tmp <- tempfile(pattern = ".zip", file.path(exdir))
-    download.file(url, tmp)
-    unzip(tmp, exdir = file.path(exdir))
+    tmp <- tempfile(fileext = ".zip")
+    utils::download.file(url, tmp)
+    utils::unzip(tmp, exdir = file.path(exdir))
     unlink(tmp)
   } else {
     rlang::inform(
-      "Skipping to download zipped file because the 'url' is null. If something went wrong, remove the exdir/data directory."
+      paste(
+        "Skipping to download zipped file because the 'url' is null.",
+        "If something went wrong, remove the exdir/data directory.",
+        sep = "\n"
+      )
     )
   }
-  res <- NULL
-  if (!dir.exists(file.path(exdir, "data"))) {
-    res <- rlang::env_get(.pkgenv, "read_jrte_rte", default = read_jrte_rte_impl())(exdir, keep)
-    if (keep_rhr) {
-      ## rhr
-      rhr <-
-        readr::read_tsv(file.path(exdir, "jrte-corpus-master/data/rhr.tsv"), col_names = FALSE, progress = FALSE, show_col_types = FALSE) %>%
-        dplyr::transmute(
-          example_id = .data$X1,
-          label = factor(.data$X2, labels = c("reputation", "not_reputation")),
-          text = .data$X3,
-          judges = .data$X4,
-          usage = as.factor(.data$X5)
-        ) %>%
-        dplyr::mutate(across(where(is.character), ~ na_if(., ""))) %>%
-        dplyr::mutate(across(where(is.character), ~ na_if(., "null"))) %>%
-        tibble::rowid_to_column()
-      res$rhr <- parse_jrte_judges(rhr)
-    }
-    if (keep_pn) {
-      ## pn
-      res$pn <-
-        readr::read_tsv(file.path(exdir, "jrte-corpus-master/data/pn.tsv"), col_names = FALSE, progress = FALSE, show_col_types = FALSE) %>%
-        dplyr::transmute(
-          example_id = .data$X1,
-          label = factor(.data$X2, labels = c("Positive", "Neutral", "Negative")),
-          text = .data$X3,
-          judges = .data$X4,
-          usage = as.factor(.data$X5)
-        ) %>%
-        dplyr::mutate(across(where(is.character), ~ na_if(., ""))) %>%
-        dplyr::mutate(across(where(is.character), ~ na_if(., "null"))) %>%
-        tibble::rowid_to_column()
-    }
+  if (!dir.exists(file.path(exdir, "jrte-corpus-master/data"))) {
+    return(dplyr::tibble())
+  }
+  on.exit(message("Done."))
+  res <- rlang::env_get(
+    .pkgenv,
+    "read_jrte_rte",
+    default = read_jrte_rte_impl()
+  )(exdir, keep)
+
+  if (keep_rhr) {
+    ## rhr
+    rhr <-
+      readr::read_tsv(
+        file.path(exdir, "jrte-corpus-master/data/rhr.tsv"),
+        col_names = FALSE,
+        progress = FALSE,
+        show_col_types = FALSE
+      ) %>%
+      dplyr::transmute(
+        example_id = .data$X1,
+        label = factor(.data$X2, labels = c("reputation", "not_reputation")),
+        text = .data$X3,
+        judges = .data$X4,
+        usage = as.factor(.data$X5)
+      ) %>%
+      dplyr::mutate(across(where(is.character), ~ dplyr::na_if(., ""))) %>%
+      dplyr::mutate(across(where(is.character), ~ dplyr::na_if(., "null"))) %>%
+      dplyr::mutate(rowid = dplyr::row_number())
+    res$rhr <- parse_jrte_judges(rhr)
+  }
+  if (keep_pn) {
+    ## pn
+    res$pn <-
+      readr::read_tsv(
+        file.path(exdir, "jrte-corpus-master/data/pn.tsv"),
+        col_names = FALSE,
+        progress = FALSE,
+        show_col_types = FALSE
+      ) %>%
+      dplyr::transmute(
+        example_id = .data$X1,
+        label = factor(.data$X2, labels = c("Positive", "Neutral", "Negative")),
+        text = .data$X3,
+        judges = .data$X4,
+        usage = as.factor(.data$X5)
+      ) %>%
+      dplyr::mutate(across(where(is.character), ~ dplyr::na_if(., ""))) %>%
+      dplyr::mutate(across(where(is.character), ~ dplyr::na_if(., "null"))) %>%
+      dplyr::mutate(rowid = dplyr::row_number())
   }
   res
 }

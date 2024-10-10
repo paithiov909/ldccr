@@ -8,24 +8,30 @@ read_ldnws(
   url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
   exdir = tempdir(),
   keep = ldnws_categories(),
-  collapse = "\\n\\n"
+  collapse = "\\n\\n",
+  include_title = TRUE
 )
 }
 \arguments{
-\item{url}{String.}
+\item{url}{String.
+If left to \code{NULL}, the function will skip downloading the file.}
 
 \item{exdir}{String. Path to tempolarily untar text files.}
 
-\item{keep}{List. Categories to parse and keep in data.frame.}
+\item{keep}{Character vector. Categories to parse and keep in data.frame.}
 
 \item{collapse}{String with which \code{base::paste} collapses lines.}
+
+\item{include_title}{Logical. Whether to include title in text body field.
+Defaults to \code{TRUE}.}
 }
 \value{
 A tibble.
 }
 \description{
 Download and read the Livedoor News Corpus.
-The result of this function is memoised with \code{memoise::memoise} internally.
+The result of this function is memoised
+with \code{memoise::memoise} internally.
 }
 \details{
 This function downloads the Livedoor News Corpus and parses it to a tibble.
