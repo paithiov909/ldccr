@@ -14,13 +14,13 @@ read_ldnws(
 }
 \arguments{
 \item{url}{String.
-If left to \code{NULL}, the function will skip downloading the file.}
+If left with \code{NULL}, the function will skip downloading the file.}
 
 \item{exdir}{String. Path to tempolarily untar text files.}
 
 \item{keep}{Character vector. Categories to parse and keep in data.frame.}
 
-\item{collapse}{String with which \code{base::paste} collapses lines.}
+\item{collapse}{String with which \code{\link[base:paste]{base::paste()}} collapses lines.}
 
 \item{include_title}{Logical. Whether to include title in text body field.
 Defaults to \code{TRUE}.}
@@ -29,12 +29,12 @@ Defaults to \code{TRUE}.}
 A tibble.
 }
 \description{
-Download and read the Livedoor News Corpus.
+Downloads and reads the Livedoor News Corpus.
 The result of this function is memoised
-with \code{memoise::memoise} internally.
+with \code{\link[memoise:memoise]{memoise::memoise()}} internally.
 }
 \details{
 This function downloads the Livedoor News Corpus and parses it to a tibble.
 For details about the Livedoor News Corpus, please see
-\href{https://www.rondhuit.com/download.html#ldcc}{this page}.
+\href{https://www.rondhuit.com/download.html#ldcc}{thie page}.
 }

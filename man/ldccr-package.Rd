@@ -17,7 +17,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Akiru Kato \email{paithiov909@gmail.com}
+\strong{Maintainer}: Akiru Kato \email{paithiov909@gmail.com} (2023-present Sqids maintainers [cph])
 
 }
 \keyword{internal}

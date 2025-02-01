@@ -7,7 +7,7 @@
 parse_jrte_judges(tbl)
 }
 \arguments{
-\item{tbl}{A tibble returned from \code{read_jrte} which name is \code{rte.*.tsv}
+\item{tbl}{A tibble returned from \code{read_jrte()} which name is \code{rte.*.tsv}
 (this function cannot parse judges of the \code{pn} dataset).}
 }
 \value{

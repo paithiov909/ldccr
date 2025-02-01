@@ -1,6 +1,6 @@
 #' Parse reasoning column of 'rte.*.tsv'
 #'
-#' @param tbl A tibble returned from \code{read_jrte} which name is `rte.*.tsv`.
+#' @param tbl A tibble returned from `read_jrte()` which name is `rte.*.tsv`.
 #' @returns A tibble.
 #' @export
 parse_jrte_reasoning <- function(tbl) {
@@ -31,7 +31,7 @@ parse_jrte_reasoning <- function(tbl) {
 
 #' Parse judges column of 'rte.*.tsv'
 #'
-#' @param tbl A tibble returned from \code{read_jrte} which name is `rte.*.tsv`
+#' @param tbl A tibble returned from `read_jrte()` which name is `rte.*.tsv`
 #' (this function cannot parse judges of the `pn` dataset).
 #' @returns A tibble.
 #' @keywords internal

@@ -10,7 +10,7 @@ unidic_availables <- function() {
 #' Download and unzip 'UniDic'
 #'
 #' Download 'UniDic' of specified version into `dirname`.
-#' This function is partial port of \href{https://github.com/polm/unidic-py}{polm/unidic-py}.
+#' This function is partial port of [polm/unidic-py](https://github.com/polm/unidic-py).
 #' Note that to unzip dictionary will take up 770MB on disk after downloading.
 #'
 #' @param version String; version of 'UniDic'.

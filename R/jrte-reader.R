@@ -57,10 +57,10 @@ read_jrte_rte_impl <- function() {
 #' Read the JRTE Corpus
 #'
 #' Download and read the Japanese Realistic Textual Entailment Corpus.
-#' The result of this function is memoised with \code{memoise::memoise} internally.
+#' The result of this function is memoised with [memoise::memoise()] internally.
 #'
 #' @param url String.
-#' If left to \code{NULL}, the function will skip downloading the file.
+#' If left to `NULL`, the function will skip downloading the file.
 #' @param exdir String. Path to tempolarily unzip text files.
 #' @param keep List. File names to parse and keep in returned value.
 #' @param keep_rhr Logical. If supplied `TRUE`, keeps `rhr.tsv`.

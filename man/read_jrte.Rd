@@ -29,5 +29,5 @@ A list of tibbles.
 }
 \description{
 Download and read the Japanese Realistic Textual Entailment Corpus.
-The result of this function is memoised with \code{memoise::memoise} internally.
+The result of this function is memoised with \code{\link[memoise:memoise]{memoise::memoise()}} internally.
 }

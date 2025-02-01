@@ -19,7 +19,7 @@ read_ja_text8(
 A tibble.
 }
 \description{
-Download and read the ja.text8 corpus as a tibble.
+Downloads and reads the ja.text8 corpus as a tibble.
 }
 \details{
 By default, this function reads the

@@ -1,32 +1,11 @@
 destination: docs
 
-url: https://paithiov909.github.io/ldccr
+url: https://paithiov909.github.io/ldccr/
 
 template:
   bootstrap: 5
-
-home:
-  strip_header: true
-
-reference:
-  - title: "Corpora Tools"
-    contents:
-      - read_aozora
-      - read_ja_text8
-      - read_jrte
-      - read_ldnws
-  - title: "Utilities"
-    contents:
-      - clean_emoji
-      - clean_url
-      - download_unidic
-      - is_within_era
-      - jrte_rte_files
-      - ldnws_categories
-      - parse_jrte_reasoning
-      - parse_to_jdate
-      - unidic_availables
-  - title: "Datasets"
-    contents:
-      - AozoraBunkoSnapshot
-      - NekoText
+  light-switch: true
+  opengraph:
+    twitter:
+      creator: "@paithiov909"
+      card: summary_large_image

@@ -14,7 +14,7 @@ read_aozora(
 \item{url}{URL of text download link.}
 
 \item{txtname}{New file name as which text is saved.
-If left to \code{NULL}, keeps name of the source file.}
+If left with \code{NULL}, keeps name of the source file.}
 
 \item{directory}{Path where new file is saved.}
 }

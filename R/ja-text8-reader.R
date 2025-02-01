@@ -1,9 +1,10 @@
 #' Read the ja.text8 corpus
 #'
-#' Download and read the ja.text8 corpus as a tibble.
+#' Downloads and reads the ja.text8 corpus as a tibble.
+#'
 #' @details
 #' By default, this function reads the
-#' \href{https://github.com/Hironsan/ja.text8}{ja.text8} corpus as a tibble
+#' [ja.text8](https://github.com/Hironsan/ja.text8) corpus as a tibble
 #' by splitting it into sentences.
 #' The ja.text8 as whole corpus consists of over 582,000 sentences,
 #' 16,900,026 tokens, and 290,811 vocabularies.

@@ -7,7 +7,7 @@
 parse_jrte_reasoning(tbl)
 }
 \arguments{
-\item{tbl}{A tibble returned from \code{read_jrte} which name is \code{rte.*.tsv}.}
+\item{tbl}{A tibble returned from \code{read_jrte()} which name is \code{rte.*.tsv}.}
 }
 \value{
 A tibble.

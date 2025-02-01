@@ -1,8 +1,9 @@
 Package: ldccr
 Title: Utilities for Various Japanese Corpora
-Version: 2024.10.10
+Version: 2025.02.02
 Authors@R:
-    person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre"))
+    person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre"),
+           comment = "2023-present Sqids maintainers [cph]")
 Maintainer: Akiru Kato <paithiov909@gmail.com>
 Description: The goal of ldccr package is to make easy to use Japanese
     language resources. This package provides parsers for several Japanese
@@ -12,19 +13,22 @@ License: MIT + file LICENSE
 URL: https://github.com/paithiov909/ldccr
 BugReports: https://github.com/paithiov909/ldccr/issues
 Depends:
-    R (>= 2.10)
+    R (>= 3.5)
 Imports:
     dplyr,
     memoise,
     purrr (>= 1.0.0),
+    Rcpp,
     RcppSimdJson,
     readr,
     rlang,
     stringi,
-    utils,
+    vctrs,
     yesno
 Suggests:
     testthat (>= 3.0.0)
+LinkingTo:
+    Rcpp
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true

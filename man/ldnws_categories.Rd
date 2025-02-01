@@ -10,7 +10,7 @@ ldnws_categories(
 )
 }
 \arguments{
-\item{keep}{Character vector. File names to parse.}
+\item{keep}{Character vector. Category names to parse.}
 }
 \value{
 A character vector.

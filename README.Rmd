@@ -9,8 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-# set.seed(289)
-pkgload::load_all()
+pkgload::load_all(export_all = FALSE)
 ```
 
 # ldccr
@@ -33,7 +32,8 @@ This package provides:
 ## Installation
 
 ```r
-install.packages("ldccr", repos = c("https://paithiov909.r-universe.dev", "https://cloud.r-project.org"))
+# install.packages("pak")
+pak::pak("paithiov909/ldccr")
 ```
 
 ## Supported Corpora
@@ -52,17 +52,50 @@ install.packages("ldccr", repos = c("https://paithiov909.r-universe.dev", "https
 
 ## Download text file from Aozora Bunko
 
-```{r aozora_example}
+You can download a text file by specifying `テキストファイルURL` with `read_aozora()`:
+
+```{r}
 if (!dir.exists("cache")) dir.create("cache")
 
 text <- ldccr::AozoraBunkoSnapshot |>
-  dplyr::sample_n(1L) |>
+  dplyr::slice_sample(n = 1L) |>
   dplyr::pull("テキストファイルURL") |>
   ldccr::read_aozora(directory = "cache") |>
   readr::read_lines()
 
 dplyr::glimpse(text)
 ```
+
+If you want to read a large part of texts published at Aozora Bunko, alternatively,
+you can download them at once via [globis-university/aozorabunko-clean](https://huggingface.co/datasets/globis-university/aozorabunko-clean).
+
+For example, you can read those texts as follows:
+
+```{r}
+if (require("polars", quietly = TRUE)) {
+  # We are setting `HUGGINGFACE_HUB_CACHE` to a temporary directory.
+  # If you don't mind where the cache goes, you don't need to set this.
+  withr::with_envvar(c(HUGGINGFACE_HUB_CACHE = tempdir()), {
+    path <- hfhub::hub_download(
+      "datasets/globis-university/aozorabunko-clean",
+      "aozorabunko-dedupe-clean.jsonl.gz"
+    )
+  })
+
+  df <- pl$read_ndjson(path)
+
+  df$unnest()$
+    select(
+      pl$col("作品ID", "人物ID")$str$to_integer(),
+      pl$col("作品名", "text")
+    )
+  # To convert this into a tibble, follow with `$to_dataframe() |> dplyr::as_tibble()`.
+}
+```
+
+> Note: This example requires [polars](https://pola-rs.github.io/r-polars/) to read a gzipped NDJSON file.
+> For installation of polars, please see [Installation details](https://pola-rs.github.io/r-polars/vignettes/install.html).
+
 
 ## License
 

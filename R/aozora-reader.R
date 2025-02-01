@@ -57,7 +57,7 @@ read_aozora_impl <- function() {
 #'
 #' @param url URL of text download link.
 #' @param txtname New file name as which text is saved.
-#' If left to \code{NULL}, keeps name of the source file.
+#' If left with `NULL`, keeps name of the source file.
 #' @param directory Path where new file is saved.
 #' @returns The path to the file downloaded.
 #' @export
