@@ -6,23 +6,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Utilities for Various Japanese Corpora • ldccr</title>
-<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="lightswitch.js"></script><script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Utilities for Various Japanese Corpora">
 <meta name="description" content="The goal of ldccr package is to make easy to use Japanese language resources. This package provides parsers for several Japanese corpora that are free or open licensed and a downloader of zipped text files published on Aozora Bunko.">
 <meta property="og:description" content="The goal of ldccr package is to make easy to use Japanese language resources. This package provides parsers for several Japanese corpora that are free or open licensed and a downloader of zipped text files published on Aozora Bunko.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@paithiov909">
+<meta name="twitter:site" content="@paithiov909">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
     <a class="navbar-brand me-2" href="index.html">ldccr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2024.10.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2025.02.02</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +41,14 @@
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/paithiov909/ldccr/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
+<li><button class="dropdown-item" data-bs-theme-value="light"><span class="fa fa-sun"></span> Light</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="dark"><span class="fa fa-moon"></span> Dark</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="auto"><span class="fa fa-adjust"></span> Auto</button></li>
+  </ul>
+</li>
       </ul>
 </div>
 
@@ -46,7 +57,8 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-
+<div class="page-header"><h1 id="ldccr">ldccr<a class="anchor" aria-label="anchor" href="#ldccr"></a>
+</h1></div>
 <!-- badges: start -->
 
 <div class="section level2">
@@ -64,7 +76,8 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ldccr"</span>, repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"https://paithiov909.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"paithiov909/ldccr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="supported-corpora">Supported Corpora<a class="anchor" aria-label="anchor" href="#supported-corpora"></a>
@@ -74,9 +87,9 @@
 </h3>
 <table class="table">
 <colgroup>
-<col width="11%">
+<col width="10%">
 <col width="24%">
-<col width="38%">
+<col width="37%">
 <col width="26%">
 </colgroup>
 <thead><tr class="header">
@@ -87,19 +100,19 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>:heavy_check_mark:</td>
+<td><span class="emoji" data-emoji="heavy_check_mark">✔️</span></td>
 <td>Live Door News Corpus</td>
 <td><a href="http://creativecommons.org/licenses/by-nd/2.1/jp/" class="external-link">CC BY-ND 2.1 JP</a></td>
 <td><a href="http://www.rondhuit.com/download.html#ldcc" class="external-link">#</a></td>
 </tr>
 <tr class="even">
-<td>:heavy_check_mark:</td>
+<td><span class="emoji" data-emoji="heavy_check_mark">✔️</span></td>
 <td>Japanese Realistic Textual Entailment Corpus</td>
 <td><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="external-link">CC BY-NC-SA 4.0</a></td>
 <td><a href="https://github.com/megagonlabs/jrte-corpus" class="external-link">#</a></td>
 </tr>
 <tr class="odd">
-<td>:heavy_check_mark:</td>
+<td><span class="emoji" data-emoji="heavy_check_mark">✔️</span></td>
 <td>ja.text8 corpus</td>
 <td><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC BY-SA</a></td>
 <td><a href="https://github.com/Hironsan/ja.text8" class="external-link">#</a></td>
@@ -118,17 +131,82 @@
 <div class="section level2">
 <h2 id="download-text-file-from-aozora-bunko">Download text file from Aozora Bunko<a class="anchor" aria-label="anchor" href="#download-text-file-from-aozora-bunko"></a>
 </h2>
+<p>You can download a text file by specifying <code>テキストファイルURL</code> with <code><a href="reference/read_aozora.html">read_aozora()</a></code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.exists</a></span><span class="op">(</span><span class="st">"cache"</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="st">"cache"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">text</span> <span class="op">&lt;-</span> <span class="fu">ldccr</span><span class="fu">::</span><span class="va"><a href="reference/AozoraBunkoSnapshot.html">AozoraBunkoSnapshot</a></span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/sample_n.html" class="external-link">sample_n</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_sample</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html" class="external-link">pull</a></span><span class="op">(</span><span class="st">"テキストファイルURL"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">ldccr</span><span class="fu">::</span><span class="fu"><a href="reference/read_aozora.html">read_aozora</a></span><span class="op">(</span>directory <span class="op">=</span> <span class="st">"cache"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_lines.html" class="external-link">read_lines</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">text</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  chr [1:16] "雪子さんの泥棒よけ" "夢野久作" ...</span></span></code></pre></div>
+<span><span class="co">#&gt;  chr [1:15] "おしどり" "OSHIDORI" "小泉八雲" "田部隆次訳" ...</span></span></code></pre></div>
+<p>If you want to read a large part of texts published at Aozora Bunko, alternatively, you can download them at once via <a href="https://huggingface.co/datasets/globis-university/aozorabunko-clean" class="external-link">globis-university/aozorabunko-clean</a>.</p>
+<p>For example, you can read those texts as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st">"polars"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># We are setting `HUGGINGFACE_HUB_CACHE` to a temporary directory.</span></span>
+<span>  <span class="co"># If you don't mind where the cache goes, you don't need to set this.</span></span>
+<span>  <span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_envvar.html" class="external-link">with_envvar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>HUGGINGFACE_HUB_CACHE <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>, <span class="op">{</span></span>
+<span>    <span class="va">path</span> <span class="op">&lt;-</span> <span class="fu">hfhub</span><span class="fu">::</span><span class="fu">hub_download</span><span class="op">(</span></span>
+<span>      <span class="st">"datasets/globis-university/aozorabunko-clean"</span>,</span>
+<span>      <span class="st">"aozorabunko-dedupe-clean.jsonl.gz"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">df</span> <span class="op">&lt;-</span> <span class="va">pl</span><span class="op">$</span><span class="fu">read_ndjson</span><span class="op">(</span><span class="va">path</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">df</span><span class="op">$</span><span class="fu">unnest</span><span class="op">(</span><span class="op">)</span><span class="op">$</span></span>
+<span>    <span class="fu">select</span><span class="op">(</span></span>
+<span>      <span class="va">pl</span><span class="op">$</span><span class="fu">col</span><span class="op">(</span><span class="st">"作品ID"</span>, <span class="st">"人物ID"</span><span class="op">)</span><span class="op">$</span><span class="va">str</span><span class="op">$</span><span class="fu">to_integer</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>      <span class="va">pl</span><span class="op">$</span><span class="fu">col</span><span class="op">(</span><span class="st">"作品名"</span>, <span class="st">"text"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="co"># To convert this into a tibble, follow with `$to_dataframe() |&gt; dplyr::as_tibble()`.</span></span>
+<span><span class="op">}</span></span>
+<span><span class="co">#&gt; aozorabunko-dedupe-clean.jsonl.gz ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ | 241 MB/241 …</span></span>
+<span><span class="co">#&gt; shape: (16_951, 4)</span></span>
+<span><span class="co">#&gt; ┌────────┬────────┬──────────────────────────────┬─────────────────────────────────┐</span></span>
+<span><span class="co">#&gt; │ 作品ID ┆ 人物ID ┆ 作品名                       ┆ text                            │</span></span>
+<span><span class="co">#&gt; │ ---    ┆ ---    ┆ ---                          ┆ ---                             │</span></span>
+<span><span class="co">#&gt; │ i64    ┆ i64    ┆ str                          ┆ str                             │</span></span>
+<span><span class="co">#&gt; ╞════════╪════════╪══════════════════════════════╪═════════════════════════════════╡</span></span>
+<span><span class="co">#&gt; │ 59898  ┆ 1257   ┆ ウェストミンスター寺院       ┆ 深いおどろきにうたれて、        │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 名高いウェストミンスターに      │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 真鍮や…                         │</span></span>
+<span><span class="co">#&gt; │ 56078  ┆ 1257   ┆ 駅伝馬車                     ┆ いざ、これより樂しまむ、        │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 仕置を受くる憂なく、            │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 遊びたのしむ…                   │</span></span>
+<span><span class="co">#&gt; │ 60224  ┆ 1257   ┆ 駅馬車                       ┆ すべてよし。                    │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 何して遊ぼと                    │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 叱られない。                    │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 時はきた。                      │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ さっさ…                         │</span></span>
+<span><span class="co">#&gt; │ 60225  ┆ 1257   ┆ 寡婦とその子                 ┆ 年老いた人をいたわりなさい。そ  │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ の銀髪は、                      │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 名誉と尊敬をつねに…             │</span></span>
+<span><span class="co">#&gt; │ 60231  ┆ 1257   ┆ クリスマス                   ┆ 　だが、あのなつかしい、思い出  │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ ふかいクリスマスのお爺さんはも… │</span></span>
+<span><span class="co">#&gt; │ …      ┆ …      ┆ …                            ┆ …                               │</span></span>
+<span><span class="co">#&gt; │ 55622  ┆ 1395   ┆ 夢                           ┆ 　夢の話をするのはあまり気のき  │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ いたことではない。確か痴人夢を… │</span></span>
+<span><span class="co">#&gt; │ 49876  ┆ 1395   ┆ 『劉生画集及芸術観』について ┆ 　自分は現代の画家中に岸田君ほ  │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ ど明らかな「成長」を示している… │</span></span>
+<span><span class="co">#&gt; │ 49913  ┆ 1395   ┆ 霊的本能主義                 ┆ 一                              │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆                                 │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 　荒漠たる秋の野に立つ。星は月  │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ の御座を囲み月は清らかに…       │</span></span>
+<span><span class="co">#&gt; │ 49914  ┆ 1395   ┆ 露伴先生の思い出             ┆ 　関東大震災の前数年の間、先輩  │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ たちにまじって露伴先生から俳諧… │</span></span>
+<span><span class="co">#&gt; │ 45210  ┆ 1185   ┆ 純粋経済学要論               ┆ 　　　　　訳者序                │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆                                 │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ 　一九〇九年、レオン・ワルラス  │</span></span>
+<span><span class="co">#&gt; │        ┆        ┆                              ┆ の七十五歳…                     │</span></span>
+<span><span class="co">#&gt; └────────┴────────┴──────────────────────────────┴─────────────────────────────────┘</span></span></code></pre></div>
+<blockquote>
+<p>Note: This example requires <a href="https://pola-rs.github.io/r-polars/" class="external-link">polars</a> to read a gzipped NDJSON file. For installation of polars, please see <a href="https://pola-rs.github.io/r-polars/vignettes/install.html" class="external-link">Installation details</a>.</p>
+</blockquote>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
@@ -164,6 +242,7 @@
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Akiru Kato <br><small class="roles"> Author, maintainer </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
