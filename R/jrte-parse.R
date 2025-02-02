@@ -1,8 +1,9 @@
 #' Parse reasoning column of 'rte.*.tsv'
 #'
-#' @param tbl A tibble returned from `read_jrte()` which name is `rte.*.tsv`.
+#' @param tbl A tibble returned from [read_jrte()] of which name is `rte.*.tsv`.
 #' @returns A tibble.
 #' @export
+#' @family jrte-reader
 parse_jrte_reasoning <- function(tbl) {
   reasons <-
     RcppSimdJson::fparse(tbl$reasoning, empty_array = NA, empty_object = NA) %>%
@@ -31,9 +32,10 @@ parse_jrte_reasoning <- function(tbl) {
 
 #' Parse judges column of 'rte.*.tsv'
 #'
-#' @param tbl A tibble returned from `read_jrte()` which name is `rte.*.tsv`
+#' @param tbl A tibble returned from [read_jrte()] of which name is `rte.*.tsv`
 #' (this function cannot parse judges of the `pn` dataset).
 #' @returns A tibble.
+#' @family jrte-reader
 #' @keywords internal
 parse_jrte_judges <- function(tbl) {
   judges <-

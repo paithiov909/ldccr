@@ -7,7 +7,7 @@
 parse_jrte_reasoning(tbl)
 }
 \arguments{
-\item{tbl}{A tibble returned from \code{read_jrte()} which name is \code{rte.*.tsv}.}
+\item{tbl}{A tibble returned from \code{\link[=read_jrte]{read_jrte()}} of which name is \code{rte.*.tsv}.}
 }
 \value{
 A tibble.
@@ -15,3 +15,10 @@ A tibble.
 \description{
 Parse reasoning column of 'rte.*.tsv'
 }
+\seealso{
+Other jrte-reader: 
+\code{\link{jrte_rte_files}()},
+\code{\link{parse_jrte_judges}()},
+\code{\link{read_jrte}()}
+}
+\concept{jrte-reader}

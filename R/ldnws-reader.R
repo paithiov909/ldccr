@@ -1,8 +1,9 @@
 #' List of categories of the Livedoor News Corpus
 #'
-#' @param keep Character vector. Category names to parse.
+#' @param keep Category names to parse.
 #' @returns A character vector.
 #' @export
+#' @family ldnws-reader
 ldnws_categories <- function(keep = c(
   "dokujo-tsushin",
   "it-life-hack",
@@ -91,13 +92,14 @@ read_ldnws_impl <- function() {
 #'
 #' @param url String.
 #' If left with `NULL`, the function will skip downloading the file.
-#' @param exdir String. Path to tempolarily untar text files.
-#' @param keep Character vector. Categories to parse and keep in data.frame.
+#' @param exdir String. Directory to tempolarily untar text files.
+#' @param keep Categories to parse and keep in the tibble.
 #' @param collapse String with which [base::paste()] collapses lines.
 #' @param include_title Logical. Whether to include title in text body field.
 #' Defaults to `TRUE`.
 #' @returns A tibble.
 #' @export
+#' @family ldnws-reader
 read_ldnws <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
                        exdir = tempdir(),
                        keep = ldnws_categories(),

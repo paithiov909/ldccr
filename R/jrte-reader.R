@@ -3,6 +3,7 @@
 #' @param keep Character vector. File names to parse.
 #' @returns tsv file names.
 #' @export
+#' @family jrte-reader
 jrte_rte_files <- function(keep = c(
   "rte.nlp2020_base",
   "rte.nlp2020_append",
@@ -60,13 +61,14 @@ read_jrte_rte_impl <- function() {
 #' The result of this function is memoised with [memoise::memoise()] internally.
 #'
 #' @param url String.
-#' If left to `NULL`, the function will skip downloading the file.
+#' If left with `NULL`, the function will skip downloading the file.
 #' @param exdir String. Path to tempolarily unzip text files.
 #' @param keep List. File names to parse and keep in returned value.
 #' @param keep_rhr Logical. If supplied `TRUE`, keeps `rhr.tsv`.
 #' @param keep_pn Logical. If supplied `TRUE`, keeps `pn.tsv`.
 #' @returns A list of tibbles.
 #' @export
+#' @family jrte-reader
 read_jrte <- function(url = "https://github.com/megagonlabs/jrte-corpus/archive/refs/heads/master.zip",
                       exdir = tempdir(),
                       keep = jrte_rte_files(),

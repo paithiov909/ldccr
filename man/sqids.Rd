@@ -16,7 +16,7 @@ unsqids(x)
 \arguments{
 \item{x}{For \code{sqids()}, a vector to rank.
 You can leave this argument missing to refer to the "current" row number
-in \link{dplyr} verbs.
+in 'dplyr' verbs.
 
 For \code{unsqids()}, a character vector of IDs.}
 
@@ -37,7 +37,7 @@ that generates random-looking IDs from integer ranks
 using \href{https://sqids.org/}{Sqids (formerly Hashids)}.
 
 IDs that generated with \code{sqids()} can be easily decoded back into
-the original integers using \code{unsqids()}.
+the original ranks using \code{unsqids()}.
 }
 \examples{
 ids <- sqids(c(5, 1, 3, 2, 2, NA))

@@ -16,9 +16,9 @@ read_ldnws(
 \item{url}{String.
 If left with \code{NULL}, the function will skip downloading the file.}
 
-\item{exdir}{String. Path to tempolarily untar text files.}
+\item{exdir}{String. Directory to tempolarily untar text files.}
 
-\item{keep}{Character vector. Categories to parse and keep in data.frame.}
+\item{keep}{Categories to parse and keep in the tibble.}
 
 \item{collapse}{String with which \code{\link[base:paste]{base::paste()}} collapses lines.}
 
@@ -38,3 +38,8 @@ This function downloads the Livedoor News Corpus and parses it to a tibble.
 For details about the Livedoor News Corpus, please see
 \href{https://www.rondhuit.com/download.html#ldcc}{thie page}.
 }
+\seealso{
+Other ldnws-reader: 
+\code{\link{ldnws_categories}()}
+}
+\concept{ldnws-reader}

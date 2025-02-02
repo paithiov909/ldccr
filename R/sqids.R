@@ -6,12 +6,12 @@
 #' using [Sqids (formerly Hashids)](https://sqids.org/).
 #'
 #' IDs that generated with `sqids()` can be easily decoded back into
-#' the original integers using `unsqids()`.
+#' the original ranks using `unsqids()`.
 #'
 #' @param x
 #' For `sqids()`, a vector to rank.
 #' You can leave this argument missing to refer to the "current" row number
-#' in [dplyr] verbs.
+#' in 'dplyr' verbs.
 #'
 #' For `unsqids()`, a character vector of IDs.
 #' @param .salt Integers to use with each value of `x` to generate IDs.

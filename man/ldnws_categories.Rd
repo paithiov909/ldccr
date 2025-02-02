@@ -10,7 +10,7 @@ ldnws_categories(
 )
 }
 \arguments{
-\item{keep}{Character vector. Category names to parse.}
+\item{keep}{Category names to parse.}
 }
 \value{
 A character vector.
@@ -18,3 +18,8 @@ A character vector.
 \description{
 List of categories of the Livedoor News Corpus
 }
+\seealso{
+Other ldnws-reader: 
+\code{\link{read_ldnws}()}
+}
+\concept{ldnws-reader}

@@ -1,20 +1,25 @@
-#' Remove URLs
+#' Utility functions
 #'
+#' `r lifecycle::badge("experimental")`
+#' These functions are experimental and may withdraw in the future.
+#'
+#' @rdname utils
+#' @name utils
+NULL
+
 #' @param text A character vector.
 #' @param replacement String.
-#' @returns A character vector.
 #' @export
+#' @rdname utils
 clean_url <- function(text, replacement = "") {
   regexp <- "(https?|ftp)://([[a-zA-Z0-9]-]+\\.)+[[a-zA-Z0-9]-]+(/[[a-zA-Z0-9]- ./?%&=~]*)?"
   stringi::stri_replace_all_regex(text, pattern = regexp, replacement = replacement)
 }
 
-#' Remove emojis
-#'
 #' @param text A character vector.
 #' @param replacement String.
-#' @returns A character vector.
 #' @export
+#' @rdname utils
 clean_emoji <- function(text, replacement = "") {
   # https://github.com/exploratory-io/exploratory_func/blob/master/R/string_operation.R#L787
   regexp <- "\\p{EMOJI}|\\p{EMOJI_PRESENTATION}|\\p{EMOJI_MODIFIER_BASE}|\\p{EMOJI_MODIFIER}\\p{EMOJI_COMPONENT}"
@@ -32,12 +37,10 @@ clean_emoji <- function(text, replacement = "") {
   stringi::stri_replace_all_regex(text, pattern = regexp, replacement = replacement)
 }
 
-#' Check if dates are within Japanese era
-#'
 #' @param date Dates.
 #' @param era String.
-#' @returns Logicals.
 #' @export
+#' @rdname utils
 is_within_era <- function(date, era) {
   stringi::stri_datetime_format(
     as.Date(date),
@@ -46,12 +49,10 @@ is_within_era <- function(date, era) {
   ) == era
 }
 
-#' Parse dates to Japanese dates
-#'
 #' @param date Dates.
 #' @param format String.
-#' @returns A chacter vector.
 #' @export
+#' @rdname utils
 parse_to_jdate <- function(date, format) {
   if (missing(format)) {
     format <- enc2utf8("Gy\u5e74M\u6708d\u65e5")

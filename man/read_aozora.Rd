@@ -22,5 +22,10 @@ If left with \code{NULL}, keeps name of the source file.}
 The path to the file downloaded.
 }
 \description{
-Download a file from specified URL, unzip and convert it to UTF-8.
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#superseded}{\figure{lifecycle-superseded.svg}{options: alt='[Superseded]'}}}{\strong{[Superseded]}}
+Downloads a file from specified URL, unzips and converts it as UTF-8.
+
+If you want to read a large part of texts published at Aozora Bunko,
+you can download them at once
+via \href{https://huggingface.co/datasets/globis-university/aozorabunko-clean}{globis-university/aozorabunko-clean}.
 }

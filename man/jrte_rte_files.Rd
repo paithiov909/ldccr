@@ -18,3 +18,10 @@ tsv file names.
 \description{
 Data for Textual Entailment
 }
+\seealso{
+Other jrte-reader: 
+\code{\link{parse_jrte_judges}()},
+\code{\link{parse_jrte_reasoning}()},
+\code{\link{read_jrte}()}
+}
+\concept{jrte-reader}

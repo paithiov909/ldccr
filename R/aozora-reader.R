@@ -53,7 +53,13 @@ read_aozora_impl <- function() {
 
 #' Download text file from Aozora Bunko
 #'
-#' Download a file from specified URL, unzip and convert it to UTF-8.
+#' @description
+#' `r lifecycle::badge("superseded")`
+#' Downloads a file from specified URL, unzips and converts it as UTF-8.
+#'
+#' If you want to read a large part of texts published at Aozora Bunko,
+#' you can download them at once
+#' via [globis-university/aozorabunko-clean](https://huggingface.co/datasets/globis-university/aozorabunko-clean).
 #'
 #' @param url URL of text download link.
 #' @param txtname New file name as which text is saved.

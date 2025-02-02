@@ -14,7 +14,7 @@ read_jrte(
 }
 \arguments{
 \item{url}{String.
-If left to \code{NULL}, the function will skip downloading the file.}
+If left with \code{NULL}, the function will skip downloading the file.}
 
 \item{exdir}{String. Path to tempolarily unzip text files.}
 
@@ -31,3 +31,10 @@ A list of tibbles.
 Download and read the Japanese Realistic Textual Entailment Corpus.
 The result of this function is memoised with \code{\link[memoise:memoise]{memoise::memoise()}} internally.
 }
+\seealso{
+Other jrte-reader: 
+\code{\link{jrte_rte_files}()},
+\code{\link{parse_jrte_judges}()},
+\code{\link{parse_jrte_reasoning}()}
+}
+\concept{jrte-reader}
