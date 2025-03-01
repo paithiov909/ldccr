@@ -129,7 +129,7 @@ if (require("polars", quietly = TRUE)) {
 #> └────────┴────────┴──────────────────────────────┴─────────────────────────────────┘
 ```
 
-> Note: This example requires
+> NOTE: This example requires
 > [polars](https://pola-rs.github.io/r-polars/) to read a gzipped NDJSON
 > file. For installation of polars, please see [Installation
 > details](https://pola-rs.github.io/r-polars/vignettes/install.html).

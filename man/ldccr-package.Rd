@@ -17,7 +17,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Akiru Kato \email{paithiov909@gmail.com} (2023-present Sqids maintainers [cph])
+\strong{Maintainer}: Akiru Kato \email{paithiov909@gmail.com}
+
+Other contributors:
+\itemize{
+  \item Heikki Johannes Hildén (2023-present Sqids maintainers [cph]) [copyright holder]
+}
 
 }
 \keyword{internal}

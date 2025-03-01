@@ -1,9 +1,11 @@
 Package: ldccr
 Title: Utilities for Various Japanese Corpora
-Version: 2025.02.02
-Authors@R:
-    person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre"),
+Version: 2025.03.01
+Authors@R: c(
+    person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre")),
+    person("Heikki Johannes Hildén", role = "cph",
            comment = "2023-present Sqids maintainers [cph]")
+  )
 Maintainer: Akiru Kato <paithiov909@gmail.com>
 Description: The goal of ldccr package is to make easy to use Japanese
     language resources. This package provides parsers for several Japanese
