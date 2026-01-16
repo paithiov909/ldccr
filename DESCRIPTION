@@ -1,6 +1,6 @@
 Package: ldccr
 Title: Utilities for Various Japanese Corpora
-Version: 2025.10.17
+Version: 2026.01.16
 Authors@R: c(
     person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre")),
     person("Heikki Johannes Hildén", role = "cph",
@@ -26,8 +26,7 @@ Imports:
     readr,
     rlang,
     stringi,
-    vctrs,
-    yesno
+    vctrs
 Suggests:
     testthat (>= 3.0.0)
 LinkingTo:

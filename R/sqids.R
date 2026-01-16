@@ -38,8 +38,11 @@
 #' # When you need to generate the same IDs for each group, fix the `.salt`:
 #' dplyr::mutate(df, sqids = sqids(.salt = 1234L), .by = grp)
 #' @export
-sqids <- function(x, .salt = sample.int(1e3, 3),
-                  .ties = c("sequential", "min", "max", "dense")) {
+sqids <- function(
+  x,
+  .salt = sample.int(1e3, 3),
+  .ties = c("sequential", "min", "max", "dense")
+) {
   if (any(is.na(.salt)) || min(.salt, na.rm = TRUE) < 0L) {
     rlang::abort("Argument `.salt` must be a vector of non-negative integers.")
   }
@@ -60,7 +63,10 @@ sqids <- function(x, .salt = sample.int(1e3, 3),
 #' @rdname sqids
 #' @export
 unsqids <- function(x) {
-  if (!is.character(x) || any(stringi::stri_detect_regex(x[!is.na(x)], "[^a-zA-Z0-9]"))) {
+  if (
+    !is.character(x) ||
+      any(stringi::stri_detect_regex(x[!is.na(x)], "[^a-zA-Z0-9]"))
+  ) {
     rlang::abort("Argument `x` must be a character vector of valid Sqids.")
   }
   out <- sqids_decode(x) # NA is treated as a string "NA".

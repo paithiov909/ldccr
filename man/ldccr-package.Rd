@@ -12,6 +12,7 @@ The goal of ldccr package is to make easy to use Japanese language resources. Th
 Useful links:
 \itemize{
   \item \url{https://github.com/paithiov909/ldccr}
+  \item \url{https://paithiov909.github.io/ldccr/}
   \item Report bugs at \url{https://github.com/paithiov909/ldccr/issues}
 }
 

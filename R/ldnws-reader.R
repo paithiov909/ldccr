@@ -4,17 +4,19 @@
 #' @returns A character vector.
 #' @export
 #' @family ldnws-reader
-ldnws_categories <- function(keep = c(
-  "dokujo-tsushin",
-  "it-life-hack",
-  "kaden-channel",
-  "livedoor-homme",
-  "movie-enter",
-  "peachy",
-  "smax",
-  "sports-watch",
-  "topic-news"
-)) {
+ldnws_categories <- function(
+  keep = c(
+    "dokujo-tsushin",
+    "it-life-hack",
+    "kaden-channel",
+    "livedoor-homme",
+    "movie-enter",
+    "peachy",
+    "smax",
+    "sports-watch",
+    "topic-news"
+  )
+) {
   keep <- rlang::arg_match(
     keep,
     c(
@@ -100,11 +102,13 @@ read_ldnws_impl <- function() {
 #' @returns A tibble.
 #' @export
 #' @family ldnws-reader
-read_ldnws <- function(url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
-                       exdir = tempdir(),
-                       keep = ldnws_categories(),
-                       collapse = "\n\n",
-                       include_title = TRUE) {
+read_ldnws <- function(
+  url = "https://www.rondhuit.com/download/ldcc-20140209.tar.gz",
+  exdir = tempdir(),
+  keep = ldnws_categories(),
+  collapse = "\n\n",
+  include_title = TRUE
+) {
   # Download gzipped file.
   if (!is.null(url)) {
     tmp <- tempfile(tmpdir = file.path(exdir), fileext = ".tar.gz")

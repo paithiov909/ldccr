@@ -4,28 +4,16 @@
 \alias{utils}
 \alias{clean_url}
 \alias{clean_emoji}
-\alias{is_within_era}
-\alias{parse_to_jdate}
 \title{Utility functions}
 \usage{
 clean_url(text, replacement = "")
 
 clean_emoji(text, replacement = "")
-
-is_within_era(date, era)
-
-parse_to_jdate(date, format)
 }
 \arguments{
 \item{text}{A character vector.}
 
 \item{replacement}{String.}
-
-\item{date}{Dates.}
-
-\item{era}{String.}
-
-\item{format}{String.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
