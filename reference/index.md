@@ -29,6 +29,4 @@
   : Download and unzip 'UniDic'
 - [`clean_url()`](https://paithiov909.github.io/ldccr/reference/utils.md)
   [`clean_emoji()`](https://paithiov909.github.io/ldccr/reference/utils.md)
-  [`is_within_era()`](https://paithiov909.github.io/ldccr/reference/utils.md)
-  [`parse_to_jdate()`](https://paithiov909.github.io/ldccr/reference/utils.md)
   **\[experimental\]** : Utility functions

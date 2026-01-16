@@ -11,7 +11,7 @@ AozoraBunkoSnapshot
 ## Format
 
 An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with
-19407 rows and 55 columns.
+19440 rows and 55 columns.
 
 ## Source
 
