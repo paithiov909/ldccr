@@ -1,6 +1,6 @@
 Package: ldccr
 Title: Utilities for Various Japanese Corpora
-Version: 2026.01.16
+Version: 2026.03.24
 Authors@R: c(
     person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre")),
     person("Heikki Johannes Hildén", role = "cph",
