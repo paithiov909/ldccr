@@ -55,7 +55,7 @@ For `unsqids()`, integers.
 ``` r
 ids <- sqids(c(5, 1, 3, 2, 2, NA))
 ids
-#> [1] "sV8f2jWQCSF" "nWqBjfLKPN6" "rxCU0lrBpOP" "tSyUzJcFbrQ" "eX6tAl3X00b"
+#> [1] "cjuiea7YwmO" "GpUYec8C9SD" "HnVrUtYxjxO" "6Xge9xA9Rhq" "YwEGRTfU80b"
 #> [6] NA           
 unsqids(ids)
 #> [1]  5  1  4  2  3 NA
@@ -66,27 +66,27 @@ df <- data.frame(
 # You can use `sqids()` without referencing `x` in dplyr verbs.
 dplyr::mutate(df, sqids = sqids(), row_id = unsqids(sqids))
 #>   grp       sqids row_id
-#> 1   1 FLGifXgAKol      1
-#> 2   1 eV6yJlrR0U9      2
-#> 3   1 2jYAj5Oh9kN      3
-#> 4   2 gMHvwJ7wC3D      4
-#> 5   2 zBcSRwQdmeu      5
-#> 6   2 dC4bXwDA0xT      6
-#> 7   3 5HQP1ZFioE8      7
-#> 8   3 URLhvWEkxMv      8
-#> 9   3 Z4MriUca074      9
+#> 1   1 eH6wVlCO0ZA      1
+#> 2   1 0dTSmtQKakU      2
+#> 3   1 pAkeMlWKnO9      3
+#> 4   2 1a79sLUZt7r      4
+#> 5   2 GQUUYcFb9Ub      5
+#> 6   2 xcoeNCjm76h      6
+#> 7   3 Z7Md7UY60wE      7
+#> 8   3 gWHmfJheCXR      8
+#> 9   3 JoagzEH8OKT      9
 # Use `.ties` to control how to rank duplicate values.
 dplyr::mutate(df, sqids = sqids(grp, .ties = "min"), grp_id = unsqids(sqids))
 #>   grp       sqids grp_id
-#> 1   1 artKCN8NrN4      1
-#> 2   1 artKCN8NrN4      1
-#> 3   1 artKCN8NrN4      1
-#> 4   2 NEz0oX9dVlL      4
-#> 5   2 NEz0oX9dVlL      4
-#> 6   2 NEz0oX9dVlL      4
-#> 7   3 vzmW9zHm1PZ      7
-#> 8   3 vzmW9zHm1PZ      7
-#> 9   3 vzmW9zHm1PZ      7
+#> 1   1 tCyn3JsAbMw      1
+#> 2   1 tCyn3JsAbMw      1
+#> 3   1 tCyn3JsAbMw      1
+#> 4   2 zhcShwOlmwh      4
+#> 5   2 zhcShwOlmwh      4
+#> 6   2 zhcShwOlmwh      4
+#> 7   3 mcxhx3D6HHY      7
+#> 8   3 mcxhx3D6HHY      7
+#> 9   3 mcxhx3D6HHY      7
 # When you need to generate the same IDs for each group, fix the `.salt`:
 dplyr::mutate(df, sqids = sqids(.salt = 1234L), .by = grp)
 #>   grp sqids
