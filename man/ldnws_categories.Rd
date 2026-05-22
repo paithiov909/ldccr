@@ -19,7 +19,7 @@ A character vector.
 List of categories of the Livedoor News Corpus
 }
 \seealso{
-Other ldnws-reader: 
-\code{\link{read_ldnws}()}
+Other ldnws-reader:
+\code{\link[=read_ldnws]{read_ldnws()}}
 }
 \concept{ldnws-reader}

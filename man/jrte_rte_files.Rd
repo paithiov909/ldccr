@@ -19,9 +19,9 @@ tsv file names.
 Data for Textual Entailment
 }
 \seealso{
-Other jrte-reader: 
-\code{\link{parse_jrte_judges}()},
-\code{\link{parse_jrte_reasoning}()},
-\code{\link{read_jrte}()}
+Other jrte-reader:
+\code{\link[=parse_jrte_judges]{parse_jrte_judges()}},
+\code{\link[=parse_jrte_reasoning]{parse_jrte_reasoning()}},
+\code{\link[=read_jrte]{read_jrte()}}
 }
 \concept{jrte-reader}

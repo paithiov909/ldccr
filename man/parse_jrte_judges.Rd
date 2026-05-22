@@ -17,10 +17,10 @@ A tibble.
 Parse judges column of 'rte.*.tsv'
 }
 \seealso{
-Other jrte-reader: 
-\code{\link{jrte_rte_files}()},
-\code{\link{parse_jrte_reasoning}()},
-\code{\link{read_jrte}()}
+Other jrte-reader:
+\code{\link[=jrte_rte_files]{jrte_rte_files()}},
+\code{\link[=parse_jrte_reasoning]{parse_jrte_reasoning()}},
+\code{\link[=read_jrte]{read_jrte()}}
 }
 \concept{jrte-reader}
 \keyword{internal}

@@ -39,7 +39,7 @@ For details about the Livedoor News Corpus, please see
 \href{https://www.rondhuit.com/download.html#ldcc}{thie page}.
 }
 \seealso{
-Other ldnws-reader: 
-\code{\link{ldnws_categories}()}
+Other ldnws-reader:
+\code{\link[=ldnws_categories]{ldnws_categories()}}
 }
 \concept{ldnws-reader}

@@ -32,9 +32,9 @@ Download and read the Japanese Realistic Textual Entailment Corpus.
 The result of this function is memoised with \code{\link[memoise:memoise]{memoise::memoise()}} internally.
 }
 \seealso{
-Other jrte-reader: 
-\code{\link{jrte_rte_files}()},
-\code{\link{parse_jrte_judges}()},
-\code{\link{parse_jrte_reasoning}()}
+Other jrte-reader:
+\code{\link[=jrte_rte_files]{jrte_rte_files()}},
+\code{\link[=parse_jrte_judges]{parse_jrte_judges()}},
+\code{\link[=parse_jrte_reasoning]{parse_jrte_reasoning()}}
 }
 \concept{jrte-reader}

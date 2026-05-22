@@ -20,6 +20,11 @@ Useful links:
 \author{
 \strong{Maintainer}: Akiru Kato \email{paithiov909@gmail.com}
 
+Authors:
+\itemize{
+  \item Akiru Kato \email{paithiov909@gmail.com}
+}
+
 Other contributors:
 \itemize{
   \item Heikki Johannes Hildén (2023-present Sqids maintainers [cph]) [copyright holder]

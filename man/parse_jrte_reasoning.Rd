@@ -16,9 +16,9 @@ A tibble.
 Parse reasoning column of 'rte.*.tsv'
 }
 \seealso{
-Other jrte-reader: 
-\code{\link{jrte_rte_files}()},
-\code{\link{parse_jrte_judges}()},
-\code{\link{read_jrte}()}
+Other jrte-reader:
+\code{\link[=jrte_rte_files]{jrte_rte_files()}},
+\code{\link[=parse_jrte_judges]{parse_jrte_judges()}},
+\code{\link[=read_jrte]{read_jrte()}}
 }
 \concept{jrte-reader}
