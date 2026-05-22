@@ -19,6 +19,10 @@ Useful links:
 
 **Maintainer**: Akiru Kato <paithiov909@gmail.com>
 
+Authors:
+
+- Akiru Kato <paithiov909@gmail.com>
+
 Other contributors:
 
 - Heikki Johannes Hildén (2023-present Sqids maintainers \[cph\])

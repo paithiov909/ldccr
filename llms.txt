@@ -17,6 +17,7 @@ This package provides:
 ## Installation
 
 ``` r
+
 # install.packages("pak")
 pak::pak("paithiov909/ldccr")
 ```
@@ -25,11 +26,11 @@ pak::pak("paithiov909/ldccr")
 
 ### Monolingual
 
-| …   | Name                                         | License                                                               | Link                                             |
-|-----|----------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------|
-| ✔️  | Live Door News Corpus                        | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/)  | [\#](http://www.rondhuit.com/download.html#ldcc) |
-| ✔️  | Japanese Realistic Textual Entailment Corpus | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus) |
-| ✔️  | ja.text8 corpus                              | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)           | [\#](https://github.com/Hironsan/ja.text8)       |
+| … | Name | License | Link |
+|----|----|----|----|
+| ✔️ | Live Door News Corpus | [CC BY-ND 2.1 JP](http://creativecommons.org/licenses/by-nd/2.1/jp/) | [\#](http://www.rondhuit.com/download.html#ldcc) |
+| ✔️ | Japanese Realistic Textual Entailment Corpus | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [\#](https://github.com/megagonlabs/jrte-corpus) |
+| ✔️ | ja.text8 corpus | [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) | [\#](https://github.com/Hironsan/ja.text8) |
 
 ### Multilingual
 
@@ -41,6 +42,7 @@ You can download a text file by specifying `テキストファイルURL` with
 [`read_aozora()`](https://paithiov909.github.io/ldccr/reference/read_aozora.md):
 
 ``` r
+
 if (!dir.exists("cache")) dir.create("cache")
 
 text <- ldccr::AozoraBunkoSnapshot |>
@@ -60,6 +62,7 @@ alternatively, you can download them at once via
 For example, you can read those texts as follows:
 
 ``` r
+
 if (require("polars", quietly = TRUE)) {
   # We are setting `HUGGINGFACE_HUB_CACHE` to a temporary directory.
   # If you don't mind where the cache goes, you don't need to set this.
