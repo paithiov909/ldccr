@@ -16,10 +16,14 @@ export(unsqids)
 import(dplyr)
 importFrom(Rcpp,sourceCpp)
 importFrom(lifecycle,deprecate_warn)
-importFrom(rlang,.data)
-importFrom(rlang,.env)
-importFrom(utils,download.file)
-importFrom(utils,globalVariables)
-importFrom(utils,untar)
-importFrom(utils,unzip)
+importFrom(rlang,
+  .data,
+  .env
+)
+importFrom(utils,
+  download.file,
+  globalVariables,
+  untar,
+  unzip
+)
 useDynLib(ldccr, .registration = TRUE)
